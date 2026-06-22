@@ -30,8 +30,7 @@
       </div>
       <div class="auth-form-wrap">
         <a href="index.html" class="logo">
-          <i class="fas fa-ship"></i>
-          <span>Stackly</span>
+          <img src="images/gallery/logo.webp" alt="Stackly">
         </a>
         <h2>Sign In</h2>
         <p class="auth-subtitle">Welcome back! Please enter your credentials.</p>
@@ -43,7 +42,7 @@
           <div class="form-group">
             <input type="password" id="login-password" placeholder="Password" required>
             <i class="fas fa-lock"></i>
-            <i class="fas fa-eye toggle-password" onclick="togglePassword('login-password', this)"></i>
+            
           </div>
           <div class="form-group">
             <select id="login-role" required>
@@ -58,7 +57,7 @@
             <label>
               <input type="checkbox"> Remember me
             </label>
-            <a href="#">Forgot password?</a>
+            <a href="404.html">Forgot password?</a>
           </div>
           <button type="submit" class="btn btn-primary">Sign In</button>
         </form>
@@ -69,6 +68,7 @@
       </div>
     </div>
   </div>
+
 
   <script src="js/script.js"></script>
   <script>
@@ -91,6 +91,9 @@
         const password = document.getElementById('login-password').value;
         const role = document.getElementById('login-role').value;
         if (email && password && role) {
+          const stored = JSON.parse(localStorage.getItem('stackly_user') || '{}');
+          const name = stored.email === email ? stored.name : email.split('@')[0];
+          localStorage.setItem('stackly_user', JSON.stringify({ name, email, role }));
           const btn = form.querySelector('.btn');
           btn.textContent = 'Signing In...';
           btn.disabled = true;
@@ -98,7 +101,7 @@
             btn.textContent = 'Welcome Back!';
             btn.style.background = 'linear-gradient(135deg, #2ECC71, #27AE60)';
             setTimeout(() => {
-              window.location.href = role === 'admin' ? 'admin-dashboard.html' : 'index.html';
+              window.location.href = role === 'admin' ? 'dashboard/admin-dashboard.html' : 'dashboard/user-dashboard.html';
             }, 1500);
           }, 1500);
         }

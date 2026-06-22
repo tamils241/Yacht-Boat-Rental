@@ -15,22 +15,13 @@
 <body class="dashboard-body">
   <header id="header">
     <nav class="navbar container">
-      <a href="../index.html" class="logo"><i class="fas fa-ship"></i><span>Stackly</span></a>
-      <ul class="nav-menu" id="nav-menu">
-        <li><a href="../index.html" class="nav-link">Home</a></li>
-        <li><a href="../about.html" class="nav-link">About</a></li>
-        <li><a href="../fleet.html" class="nav-link">Fleet</a></li>
-        <li><a href="../destinations.html" class="nav-link">Destinations</a></li>
-        <li><a href="../services.html" class="nav-link">Services</a></li>
-        <li><a href="../gallery.html" class="nav-link">Gallery</a></li>
-        <li><a href="../pricing.html" class="nav-link">Pricing</a></li>
-        <li><a href="../contact.html" class="nav-link">Contact</a></li>
-      </ul>
+      <a href="../index.html" class="logo">
+        <img src="../images/gallery/logo.webp" alt="Stackly">
+      </a>
+      
       <div class="nav-actions">
         <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar"><i class="fas fa-bars"></i></button>
-        <a href="../login.html" class="btn btn-outline btn-sm">Login</a>
-        <a href="../register.html" class="btn btn-primary btn-sm">Register</a>
-        <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+        <a href="../login.html" class="btn btn-outline btn-sm">Logout</a>
       </div>
     </nav>
   </header>
@@ -38,11 +29,11 @@
   <div class="dashboard-layout">
     <aside class="dashboard-sidebar" id="dashboardSidebar">
       <div class="sidebar-header">
-        <h3>Admin Panel</h3>
-        <span>Super Admin</span>
+        <h3 id="adminName">Admin Panel</h3>
+        <span id="adminEmail">admin@stackly.com</span>
       </div>
       <nav class="sidebar-nav">
-        <a href="#" class="active"><i class="fas fa-th-large"></i> Dashboard</a>
+        <a href="#overview" class="active"><i class="fas fa-th-large"></i> Dashboard</a>
         <a href="#boats"><i class="fas fa-ship"></i> Manage Boats</a>
         <a href="#bookings"><i class="fas fa-calendar-check"></i> Manage Bookings</a>
         <a href="#customers"><i class="fas fa-users"></i> Manage Customers</a>
@@ -59,26 +50,28 @@
         </div>
       </div>
 
-      <div class="dashboard-cards">
-        <div class="dashboard-card">
-          <div class="card-icon blue"><i class="fas fa-ship"></i></div>
-          <h3>24</h3>
-          <p>Total Boats</p>
-        </div>
-        <div class="dashboard-card">
-          <div class="card-icon green"><i class="fas fa-calendar-check"></i></div>
-          <h3>18</h3>
-          <p>Active Bookings</p>
-        </div>
-        <div class="dashboard-card">
-          <div class="card-icon orange"><i class="fas fa-users"></i></div>
-          <h3>156</h3>
-          <p>Total Customers</p>
-        </div>
-        <div class="dashboard-card">
-          <div class="card-icon purple"><i class="fas fa-dollar-sign"></i></div>
-          <h3>$48.2K</h3>
-          <p>Monthly Revenue</p>
+      <div id="overview">
+        <div class="dashboard-cards">
+          <div class="dashboard-card">
+            <div class="card-icon blue"><i class="fas fa-ship"></i></div>
+            <h3>24</h3>
+            <p>Total Boats</p>
+          </div>
+          <div class="dashboard-card">
+            <div class="card-icon green"><i class="fas fa-calendar-check"></i></div>
+            <h3>18</h3>
+            <p>Active Bookings</p>
+          </div>
+          <div class="dashboard-card">
+            <div class="card-icon orange"><i class="fas fa-users"></i></div>
+            <h3>156</h3>
+            <p>Total Customers</p>
+          </div>
+          <div class="dashboard-card">
+            <div class="card-icon purple"><i class="fas fa-dollar-sign"></i></div>
+            <h3>$48.2K</h3>
+            <p>Monthly Revenue</p>
+          </div>
         </div>
       </div>
 
@@ -207,7 +200,7 @@
         </table>
       </div>
 
-      <div id="reports" style="margin-top: 30px;">
+      <div class="dashboard-table-wrap" id="reports" style="margin-top: 24px;">
         <h3 style="font-family: var(--font-secondary); color: var(--dark); margin-bottom: 16px;"><i class="fas fa-chart-bar"></i> Reports & Analytics</h3>
         <div class="dashboard-reports">
           <div class="report-card">
@@ -234,6 +227,13 @@
   <script src="../js/script.js"></script>
   <script>
   document.addEventListener('DOMContentLoaded', () => {
+    const user = JSON.parse(localStorage.getItem('stackly_user') || '{}');
+    if (user.name) document.getElementById('adminName').textContent = user.name;
+    if (user.email) document.getElementById('adminEmail').textContent = user.email;
+  });
+  </script>
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
     const toggle = document.getElementById('sidebarToggle');
     const sidebar = document.getElementById('dashboardSidebar');
     if (toggle && sidebar) {
@@ -248,12 +248,20 @@
         document.querySelectorAll('.dashboard-sidebar .sidebar-nav a').forEach(l => l.classList.remove('active'));
         this.classList.add('active');
         const target = this.getAttribute('href').replace('#', '');
-        if (target) {
-          const el = document.getElementById(target);
-          if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
+        document.querySelectorAll('.dashboard-main > div[id]').forEach(section => {
+          section.style.display = section.id === target ? '' : 'none';
+        });
+        // Update header
+        const titles = { overview: 'Admin Dashboard', boats: 'Manage Boats', bookings: 'Manage Bookings', customers: 'Manage Customers', reports: 'Reports & Analytics' };
+        const actions = { overview: '<a href="../fleet.html" class="btn btn-primary"><i class="fas fa-plus"></i> Add Boat</a>', boats: '<a href="../fleet.html" class="btn btn-primary"><i class="fas fa-plus"></i> Add Boat</a>', bookings: '', customers: '', reports: '' };
+        document.querySelector('.dashboard-header h1').textContent = titles[target] || 'Admin Dashboard';
+        document.querySelector('.dashboard-header .header-actions').innerHTML = actions[target] || '';
         if (window.innerWidth <= 768) sidebar.classList.remove('open');
       });
+    });
+    // Show only overview by default
+    document.querySelectorAll('.dashboard-main > div[id]').forEach(section => {
+      section.style.display = section.id === 'overview' ? '' : 'none';
     });
   });
   </script>

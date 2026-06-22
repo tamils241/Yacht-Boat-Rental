@@ -34,6 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const heroSection = document.querySelector('.hero');
 
   function updateNavbar() {
+    if (!header) return;
     if (window.scrollY > 80) {
       header.classList.add('scrolled');
     } else {
@@ -58,6 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function closeMenu() {
+    if (!hamburger || !navMenu) return;
     hamburger.classList.remove('active');
     navMenu.classList.remove('open');
     document.body.style.overflow = '';
@@ -79,9 +81,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Close menu on outside click
   document.addEventListener('click', (e) => {
-    if (navMenu.classList.contains('open') &&
+    if (navMenu && navMenu.classList.contains('open') &&
         !navMenu.contains(e.target) &&
-        !hamburger.contains(e.target)) {
+        hamburger && !hamburger.contains(e.target)) {
       closeMenu();
     }
   });
@@ -340,6 +342,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const scrollTopBtn = document.getElementById('scroll-top-btn');
 
   window.addEventListener('scroll', () => {
+    if (!scrollTopBtn) return;
     if (window.scrollY > 500) {
       scrollTopBtn.classList.add('show');
     } else {
@@ -546,9 +549,10 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       const href = this.getAttribute('href');
-      if (href === '#login' || href === '#register') return;
+      if (href === '#' || href === '#login' || href === '#register') return;
 
-      const target = document.querySelector(href);
+      let target;
+      try { target = document.querySelector(href); } catch (e) { return; }
       if (target) {
         e.preventDefault();
         target.scrollIntoView({ behavior: 'smooth' });

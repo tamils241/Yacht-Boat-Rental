@@ -362,6 +362,12 @@ img {
   color: var(--secondary);
 }
 
+.logo img {
+  height: 40px;
+  width: auto;
+  display: block;
+}
+
 .nav-menu {
   display: flex;
   align-items: center;
@@ -1751,7 +1757,7 @@ img {
 .footer-brand p {
   font-size: 0.95rem;
   line-height: 1.8;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   opacity: 0.7;
 }
 
@@ -2875,6 +2881,38 @@ img {
 .dashboard-body {
   background: var(--light-gray);
   min-height: 100vh;
+}
+
+.dashboard-body #header {
+  background: var(--dark);
+  padding: 5px 0;
+}
+
+.dashboard-body #header .logo span,
+.dashboard-body #header .nav-link {
+  color: var(--white);
+}
+
+.dashboard-body #header .nav-actions .btn-outline {
+  border-color: rgba(255,255,255,0.3);
+  color: var(--white);
+}
+
+.dashboard-body #header .nav-actions .btn-outline:hover {
+  background: var(--white);
+  color: var(--dark);
+}
+
+.dashboard-body #header .hamburger span {
+  background: var(--white);
+}
+
+.dashboard-body #header .hamburger.active span {
+  background: var(--white);
+}
+
+.dashboard-body .sidebar-toggle {
+  color: var(--white);
 }
 
 .dashboard-layout {
