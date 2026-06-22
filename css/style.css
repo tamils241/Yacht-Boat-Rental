@@ -426,6 +426,7 @@ img {
 }
 
 .nav-actions .btn-outline {
+  display: none;
   border-color: rgba(255, 255, 255, 0.5);
   color: rgba(255, 255, 255, 0.9);
 }
@@ -444,6 +445,10 @@ img {
 #header.scrolled .nav-actions .btn-outline:hover {
   background: var(--primary);
   color: var(--white);
+}
+
+.nav-actions .btn-primary.btn-sm {
+  display: none;
 }
 
 .book-now {
