@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Stackly Gallery - Browse stunning photos of luxury yachts, destinations, and memorable customer experiences.">
+  <title>Gallery | Stackly Luxury Yacht Rental</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script src="js/script.js"></script>
+</head>
+<body>
+  <div id="loading-screen">
+    <div class="loader-container">
+      <i class="fas fa-ship loader-icon"></i>
+      <div class="loader-bar"></div>
+      <p>Setting Sail...</p>
+    </div>
+  </div>
+
+  <button id="scroll-top-btn" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <header id="header">
+    <nav class="navbar container">
+      <a href="index.html" class="mobile-back" aria-label="Back to Home"><i class="fas fa-arrow-left"></i></a>
+      <a href="index.html" class="logo">
+        <i class="fas fa-ship"></i>
+        <span>Stackly</span>
+      </a>
+      <ul class="nav-menu" id="nav-menu">
+        <li><button class="nav-close" id="nav-close" aria-label="Close menu">&times;</button></li>
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="fleet.html" class="nav-link">Fleet</a></li>
+        <li><a href="destinations.html" class="nav-link">Destinations</a></li>
+        <li><a href="services.html" class="nav-link">Services</a></li>
+        <li><a href="gallery.html" class="nav-link active">Gallery</a></li>
+        <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+        <li><a href="testimonials.html" class="nav-link">Testimonials</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="login.html" class="btn btn-outline btn-sm">Login</a>
+        <a href="register.html" class="btn btn-primary btn-sm">Register</a>
+        <a href="contact.html" class="btn btn-primary btn-sm book-now">Book Now</a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <section class="page-banner" style="background-image: url('./images/gallery/bg3_11zon.webp');">
+    <h1>Gallery</h1>
+    <p>Browse through our collection of stunning moments and unforgettable memories</p>
+    <div class="wave-container">
+      <svg class="wave" viewBox="0 0 1440 320" preserveAspectRatio="none">
+        <path fill="#ffffff" d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,213.3C672,224,768,224,864,213.3C960,203,1056,181,1152,181.3C1248,181,1344,203,1392,213.3L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+      </svg>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Moments</span>
+        <h2 class="section-title">Memories on the Water</h2>
+        <p class="section-desc">Every journey tells a story. Here are some of our favorite moments captured.</p>
+      </div>
+      <div class="gallery-page-grid">
+        <div class="gallery-page-item gallery-page-featured reveal flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="./images/gallery/Sunset.webp" alt="Luxury yacht at sunset">
+              <div class="gallery-overlay-icon"><i class="fas fa-search-plus"></i></div>
+            </div>
+            <div class="flip-card-back gallery-back">
+              <h4>Sunset Elegance</h4>
+              <span>Maldives</span>
+              <p>Sunset cruise</p>
+              <a href="contact.html" class="btn btn-primary btn-sm">Book Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-page-item reveal flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="./images/gallery/Adventure_Sea.webp" alt="Speed boat racing">
+              <div class="gallery-overlay-icon"><i class="fas fa-search-plus"></i></div>
+            </div>
+            <div class="flip-card-back gallery-back">
+              <h4>Adventure at Sea</h4>
+              <span>Dubai Marina</span>
+              <p>Speed adventure</p>
+              <a href="contact.html" class="btn btn-primary btn-sm">Book Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-page-item reveal flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="./images/gallery/Deep.webp" alt="Fishing boat">
+              <div class="gallery-overlay-icon"><i class="fas fa-search-plus"></i></div>
+            </div>
+            <div class="flip-card-back gallery-back">
+              <h4>Deep Sea Catch</h4>
+              <span>Phuket</span>
+              <p>Fishing trip</p>
+              <a href="contact.html" class="btn btn-primary btn-sm">Book Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-page-item gallery-page-wide reveal flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="./images/gallery/Tropical Paradise.webp" alt="Catamaran cruising">
+              <div class="gallery-overlay-icon"><i class="fas fa-search-plus"></i></div>
+            </div>
+            <div class="flip-card-back gallery-back">
+              <h4>Tropical Paradise</h4>
+              <span>Bali</span>
+              <p>Island cruise</p>
+              <a href="contact.html" class="btn btn-primary btn-sm">Book Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-page-item reveal flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="./images/gallery/Celebration at Sea.webp" alt="Party yacht">
+              <div class="gallery-overlay-icon"><i class="fas fa-search-plus"></i></div>
+            </div>
+            <div class="flip-card-back gallery-back">
+              <h4>Celebration at Sea</h4>
+              <span>Miami Beach</span>
+              <p>Party cruise</p>
+              <a href="contact.html" class="btn btn-primary btn-sm">Book Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-page-item reveal flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="./images/gallery/Royal Treatment.webp" alt="Luxury yacht">
+              <div class="gallery-overlay-icon"><i class="fas fa-search-plus"></i></div>
+            </div>
+            <div class="flip-card-back gallery-back">
+              <h4>Royal Treatment</h4>
+              <span>Greek Islands</span>
+              <p>Luxury charter</p>
+              <a href="contact.html" class="btn btn-primary btn-sm">Book Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-page-item gallery-page-tall reveal flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="./images/gallery/Crystal-clear-water.webp" alt="Maldives water">
+              <div class="gallery-overlay-icon"><i class="fas fa-search-plus"></i></div>
+            </div>
+            <div class="flip-card-back gallery-back">
+              <h4>Crystal Clear</h4>
+              <span>Maldives</span>
+              <p>Snorkeling tour</p>
+              <a href="contact.html" class="btn btn-primary btn-sm">Book Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-page-item reveal flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="./images/gallery/1.webp" alt="Beach sunset">
+              <div class="gallery-overlay-icon"><i class="fas fa-search-plus"></i></div>
+            </div>
+            <div class="flip-card-back gallery-back">
+              <h4>Golden Hour</h4>
+              <span>Miami Beach</span>
+              <p>Sunset sail</p>
+              <a href="contact.html" class="btn btn-primary btn-sm">Book Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-page-item reveal flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="./images/gallery/island-hopping3.webp" alt="Greek Islands">
+              <div class="gallery-overlay-icon"><i class="fas fa-search-plus"></i></div>
+            </div>
+            <div class="flip-card-back gallery-back">
+              <h4>Island Hopping</h4>
+              <span>Greek Islands</span>
+              <p>Island tour</p>
+              <a href="contact.html" class="btn btn-primary btn-sm">Book Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-page-item reveal flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="./images/gallery/light_dubai.webp" alt="Dubai skyline">
+              <div class="gallery-overlay-icon"><i class="fas fa-search-plus"></i></div>
+            </div>
+            <div class="flip-card-back gallery-back">
+              <h4>City Lights</h4>
+              <span>Dubai Marina</span>
+              <p>Evening cruise</p>
+              <a href="contact.html" class="btn btn-primary btn-sm">Book Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-page-item gallery-page-wide reveal flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="./images/gallery/2.webp" alt="Aerial yacht view">
+              <div class="gallery-overlay-icon"><i class="fas fa-search-plus"></i></div>
+            </div>
+            <div class="flip-card-back gallery-back">
+              <h4>Aerial Paradise</h4>
+              <span>Caribbean</span>
+              <p>Scenic flight</p>
+              <a href="contact.html" class="btn btn-primary btn-sm">Book Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-page-item reveal flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="./images/gallery/admd-phuket-1-1_11zon.webp" alt="Phuket beach">
+              <div class="gallery-overlay-icon"><i class="fas fa-search-plus"></i></div>
+            </div>
+            <div class="flip-card-back gallery-back">
+              <h4>Tropical Escape</h4>
+              <span>Phuket</span>
+              <p>Beach day</p>
+              <a href="contact.html" class="btn btn-primary btn-sm">Book Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-page-item reveal flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="./images/gallery/Sunset bali.webp" alt="Bali sunset">
+              <div class="gallery-overlay-icon"><i class="fas fa-search-plus"></i></div>
+            </div>
+            <div class="flip-card-back gallery-back">
+              <h4>Sacred Sunset</h4>
+              <span>Bali</span>
+              <p>Sunset cruise</p>
+              <a href="contact.html" class="btn btn-primary btn-sm">Book Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-page-item reveal flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="./images/gallery/Modern Luxury.webp" alt="Luxury motor yacht">
+              <div class="gallery-overlay-icon"><i class="fas fa-search-plus"></i></div>
+            </div>
+            <div class="flip-card-back gallery-back">
+              <h4>Modern Luxury</h4>
+              <span>Monaco</span>
+              <p>Luxury charter</p>
+              <a href="contact.html" class="btn btn-primary btn-sm">Book Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-page-item gallery-page-tall reveal flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="./images/gallery/Sleek Design.webp" alt="Modern yacht detail">
+              <div class="gallery-overlay-icon"><i class="fas fa-search-plus"></i></div>
+            </div>
+            <div class="flip-card-back gallery-back">
+              <h4>Sleek Design</h4>
+              <span>Italy</span>
+              <p>Yacht tour</p>
+              <a href="contact.html" class="btn btn-primary btn-sm">Book Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-page-item reveal flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="./images/gallery/Sail Away_11zon.webp" alt="Sunset sailboat">
+              <div class="gallery-overlay-icon"><i class="fas fa-search-plus"></i></div>
+            </div>
+            <div class="flip-card-back gallery-back">
+              <h4>Sail Away</h4>
+              <span>Santorini</span>
+              <p>Sailing trip</p>
+              <a href="contact.html" class="btn btn-primary btn-sm">Book Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-page-item reveal flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="./images/gallery/Endless Horizon_11zon.webp" alt="Ocean horizon">
+              <div class="gallery-overlay-icon"><i class="fas fa-search-plus"></i></div>
+            </div>
+            <div class="flip-card-back gallery-back">
+              <h4>Endless Horizon</h4>
+              <span>Pacific</span>
+              <p>Ocean cruise</p>
+              <a href="contact.html" class="btn btn-primary btn-sm">Book Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-page-item gallery-page-wide reveal flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="./images/gallery/Luxury Interior_11zon.webp" alt="Yacht interior">
+              <div class="gallery-overlay-icon"><i class="fas fa-search-plus"></i></div>
+            </div>
+            <div class="flip-card-back gallery-back">
+              <h4>Luxury Interior</h4>
+              <span>Mediterranean</span>
+              <p>VIP tour</p>
+              <a href="contact.html" class="btn btn-primary btn-sm">Book Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="lightbox" class="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <img class="lightbox-content" id="lightbox-img">
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand reveal">
+          <a href="index.html" class="logo">
+            <i class="fas fa-ship"></i>
+            <span>Stackly</span>
+          </a>
+          <p>Setting the standard for luxury yacht and boat rental experiences worldwide.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer-links reveal">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="fleet.html">Fleet</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-links reveal">
+          <h3>My Account</h3>
+          <ul>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="dashboard/user-dashboard.html">User Dashboard</a></li>
+            <li><a href="dashboard/admin-dashboard.html">Admin Dashboard</a></li>
+          </ul>
+        </div>
+        <div class="footer-links reveal">
+          <h3>Services</h3>
+          <ul>
+            <li><a href="services.html">Yacht Charter</a></li>
+            <li><a href="services.html">Fishing Trips</a></li>
+            <li><a href="services.html">Wedding Cruises</a></li>
+            <li><a href="services.html">Corporate Events</a></li>
+            <li><a href="services.html">Sunset Cruises</a></li>
+          </ul>
+        </div>
+        <div class="footer-newsletter reveal">
+          <h3>Newsletter</h3>
+          <p>Subscribe for exclusive offers and updates.</p>
+          <form id="newsletter-form">
+            <div class="newsletter-group">
+              <input type="email" placeholder="Your Email" required>
+              <button type="submit" aria-label="Subscribe"><i class="fas fa-paper-plane"></i></button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Stackly. All rights reserved. | Luxury Yacht & Boat Rental</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const close = document.querySelector('.lightbox-close');
+
+    document.querySelectorAll('.gallery-page-item').forEach(item => {
+      item.addEventListener('click', () => {
+        const img = item.querySelector('img');
+        if (img && lightbox && lightboxImg) {
+          lightboxImg.src = img.src;
+          lightbox.classList.add('open');
+          document.body.style.overflow = 'hidden';
+        }
+      });
+    });
+
+    if (close) close.addEventListener('click', () => {
+      lightbox.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+    if (lightbox) lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        lightbox.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        lightbox.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    });
+  });
+  </script>
+</body>
+</html>

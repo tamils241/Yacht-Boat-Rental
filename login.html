@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sign in to your Stackly account to manage bookings, favorites, and more.">
+  <title>Sign In | Stackly Luxury Yacht Rental</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <div id="loading-screen">
+    <div class="loader-container">
+      <i class="fas fa-ship loader-icon"></i>
+      <div class="loader-bar"></div>
+      <p>Setting Sail...</p>
+    </div>
+  </div>
+
+  <div class="auth-page" style="padding-top: 60px;">
+    <div class="auth-container">
+      <div class="auth-visual">
+        <i class="fas fa-ship"></i>
+        <h2>Welcome Back</h2>
+        <p>Sign in to manage your bookings, save favorite yachts, and access exclusive member offers.</p>
+      </div>
+      <div class="auth-form-wrap">
+        <a href="index.html" class="logo">
+          <i class="fas fa-ship"></i>
+          <span>Stackly</span>
+        </a>
+        <h2>Sign In</h2>
+        <p class="auth-subtitle">Welcome back! Please enter your credentials.</p>
+        <form id="login-form-page">
+          <div class="form-group">
+            <input type="email" id="login-email" placeholder="Email Address" required>
+            <i class="fas fa-envelope"></i>
+          </div>
+          <div class="form-group">
+            <input type="password" id="login-password" placeholder="Password" required>
+            <i class="fas fa-lock"></i>
+            <i class="fas fa-eye toggle-password" onclick="togglePassword('login-password', this)"></i>
+          </div>
+          <div class="form-group">
+            <select id="login-role" required>
+              <option value="" disabled selected>Select Role</option>
+              <option value="user">User</option>
+              <option value="admin">Admin</option>
+            </select>
+            <i class="fas fa-user-tag"></i>
+            <i class="fas fa-chevron-down select-arrow"></i>
+          </div>
+          <div class="form-options">
+            <label>
+              <input type="checkbox"> Remember me
+            </label>
+            <a href="#">Forgot password?</a>
+          </div>
+          <button type="submit" class="btn btn-primary">Sign In</button>
+        </form>
+        <div class="auth-divider">or continue with</div>
+
+        <p class="auth-footer">Don't have an account? <a href="register.html">Create one</a></p>
+        <a href="index.html" class="btn btn-primary" style="margin-top: 20px; width: 100%;"><i class="fas fa-arrow-left"></i> Back to Home</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+  <script>
+  function togglePassword(id, el) {
+    const input = document.getElementById(id);
+    if (input.type === 'password') {
+      input.type = 'text';
+      el.classList.replace('fa-eye', 'fa-eye-slash');
+    } else {
+      input.type = 'password';
+      el.classList.replace('fa-eye-slash', 'fa-eye');
+    }
+  }
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('login-form-page');
+    if (form) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const email = document.getElementById('login-email').value;
+        const password = document.getElementById('login-password').value;
+        const role = document.getElementById('login-role').value;
+        if (email && password && role) {
+          const btn = form.querySelector('.btn');
+          btn.textContent = 'Signing In...';
+          btn.disabled = true;
+          setTimeout(() => {
+            btn.textContent = 'Welcome Back!';
+            btn.style.background = 'linear-gradient(135deg, #2ECC71, #27AE60)';
+            setTimeout(() => {
+              window.location.href = role === 'admin' ? 'admin-dashboard.html' : 'index.html';
+            }, 1500);
+          }, 1500);
+        }
+      });
+    }
+  });
+  </script>
+</body>
+</html>

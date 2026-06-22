@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Stackly - Get in touch with our team for yacht rental bookings, inquiries, and support.">
+  <title>Contact Us | Stackly Luxury Yacht Rental</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <div id="loading-screen">
+    <div class="loader-container">
+      <i class="fas fa-ship loader-icon"></i>
+      <div class="loader-bar"></div>
+      <p>Setting Sail...</p>
+    </div>
+  </div>
+
+  <button id="scroll-top-btn" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <header id="header">
+    <nav class="navbar container">
+      <a href="index.html" class="mobile-back" aria-label="Back to Home"><i class="fas fa-arrow-left"></i></a>
+      <a href="index.html" class="logo">
+        <i class="fas fa-ship"></i>
+        <span>Stackly</span>
+      </a>
+      <ul class="nav-menu" id="nav-menu">
+        <li><button class="nav-close" id="nav-close" aria-label="Close menu">&times;</button></li>
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="fleet.html" class="nav-link">Fleet</a></li>
+        <li><a href="destinations.html" class="nav-link">Destinations</a></li>
+        <li><a href="services.html" class="nav-link">Services</a></li>
+        <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+        <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+        <li><a href="testimonials.html" class="nav-link">Testimonials</a></li>
+        <li><a href="contact.html" class="nav-link active">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="login.html" class="btn btn-outline btn-sm">Login</a>
+        <a href="register.html" class="btn btn-primary btn-sm">Register</a>
+        <a href="contact.html" class="btn btn-primary btn-sm book-now">Book Now</a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <section class="page-banner" style="background-image: url('./images/gallery/bg3_11zon.webp');">
+    <h1>Contact Us</h1>
+    <p>Ready to set sail? Reach out and let's start planning your adventure</p>
+    <div class="wave-container">
+      <svg class="wave" viewBox="0 0 1440 320" preserveAspectRatio="none">
+        <path fill="#ffffff" d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,213.3C672,224,768,224,864,213.3C960,203,1056,181,1152,181.3C1248,181,1344,203,1392,213.3L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+      </svg>
+    </div>
+  </section>
+
+  <section class="section contact">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Get In Touch</span>
+        <h2 class="section-title">We'd Love to Hear From You</h2>
+        <p class="section-desc">Whether you're ready to book or just exploring options, our team is here to help.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <div class="contact-card">
+            <i class="fas fa-location-dot"></i>
+            <h3>Visit Our Office</h3>
+            <p>Dubai Marina Walk, Dubai<br>United Arab Emirates<br>PO Box 123456</p>
+          </div>
+          <div class="contact-card">
+            <i class="fas fa-phone"></i>
+            <h3>Call Us</h3>
+            <p>+971 50 123 4567<br>+971 4 123 4567<br>Toll-Free: 800 STACKLY</p>
+          </div>
+          <div class="contact-card">
+            <i class="fas fa-envelope"></i>
+            <h3>Email Us</h3>
+            <p>info@stacklyyacht.com<br>bookings@stacklyyacht.com<br>support@stacklyyacht.com</p>
+          </div>
+          <div class="contact-card">
+            <i class="fas fa-clock"></i>
+            <h3>Working Hours</h3>
+            <p>Mon - Fri: 9:00 AM - 9:00 PM<br>Sat - Sun: 10:00 AM - 6:00 PM<br>24/7 Emergency Support</p>
+          </div>
+          <div class="contact-social">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="contact-form reveal">
+          <h3 style="font-family: var(--font-secondary); font-size: 1.3rem; color: var(--dark); margin-bottom: 20px;">Send Us a Message</h3>
+          <form id="contact-form">
+            <div class="form-row">
+              <div class="form-group">
+                <input type="text" id="name" placeholder="Your Name" maxlength="16" pattern="[A-Za-z\s]+" title="Letters only, no numbers" oninput="this.value = this.value.replace(/[0-9]/g, '')" required>
+                <i class="fas fa-user"></i>
+              </div>
+              <div class="form-group">
+                <input type="email" id="email" placeholder="Your Email" required>
+                <i class="fas fa-envelope"></i>
+              </div>
+            </div>
+            <div class="form-group">
+              <input type="tel" id="phone" placeholder="Your Phone" maxlength="16" pattern="[0-9]+" title="Numbers only" oninput="this.value = this.value.replace(/[^0-9]/g, '')" required>
+              <i class="fas fa-phone"></i>
+            </div>
+            <div class="form-group">
+              <select id="subject">
+                <option value="">Select Subject</option>
+                <option value="booking">Booking Inquiry</option>
+                <option value="fleet">Fleet Information</option>
+                <option value="pricing">Pricing Question</option>
+                <option value="corporate">Corporate Event</option>
+                <option value="other">Other</option>
+              </select>
+              <i class="fas fa-tag"></i>
+              <i class="fas fa-chevron-down" style="position: absolute; right: 16px; top: 50%; transform: translateY(-50%); color: var(--text-light); pointer-events: none; font-size: 0.8rem;"></i>
+            </div>
+            <div class="form-group">
+              <textarea id="message" rows="5" placeholder="Tell us about your dream yacht experience..." required></textarea>
+              <i class="fas fa-comment"></i>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background: var(--light-gray); padding-top: 0;">
+    <div class="container">
+      <div class="contact-page-map reveal">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3610.178656717085!2d55.13870611500746!3d25.20420783783798!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f43496a1e1c21%3A0xa2c3e2e5e5e5e5e5!2sDubai%20Marina!5e0!3m2!1sen!2sae!4v1" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand reveal">
+          <a href="index.html" class="logo">
+            <i class="fas fa-ship"></i>
+            <span>Stackly</span>
+          </a>
+          <p>Setting the standard for luxury yacht and boat rental experiences worldwide.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer-links reveal">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="fleet.html">Fleet</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-links reveal">
+          <h3>My Account</h3>
+          <ul>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="dashboard/user-dashboard.html">User Dashboard</a></li>
+            <li><a href="dashboard/admin-dashboard.html">Admin Dashboard</a></li>
+          </ul>
+        </div>
+        <div class="footer-links reveal">
+          <h3>Services</h3>
+          <ul>
+            <li><a href="services.html">Yacht Charter</a></li>
+            <li><a href="services.html">Fishing Trips</a></li>
+            <li><a href="services.html">Wedding Cruises</a></li>
+            <li><a href="services.html">Corporate Events</a></li>
+            <li><a href="services.html">Sunset Cruises</a></li>
+          </ul>
+        </div>
+        <div class="footer-newsletter reveal">
+          <h3>Newsletter</h3>
+          <p>Subscribe for exclusive offers and updates.</p>
+          <form id="newsletter-form">
+            <div class="newsletter-group">
+              <input type="email" placeholder="Your Email" required>
+              <button type="submit" aria-label="Subscribe"><i class="fas fa-paper-plane"></i></button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Stackly. All rights reserved. | Luxury Yacht & Boat Rental</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

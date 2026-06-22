@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Stackly User Dashboard - Manage your bookings, profile, and preferences.">
+  <title>User Dashboard | Stackly</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body class="dashboard-body">
+  <header id="header">
+    <nav class="navbar container">
+      <a href="../index.html" class="logo"><i class="fas fa-ship"></i><span>Stackly</span></a>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="../index.html" class="nav-link">Home</a></li>
+        <li><a href="../about.html" class="nav-link">About</a></li>
+        <li><a href="../fleet.html" class="nav-link">Fleet</a></li>
+        <li><a href="../destinations.html" class="nav-link">Destinations</a></li>
+        <li><a href="../services.html" class="nav-link">Services</a></li>
+        <li><a href="../gallery.html" class="nav-link">Gallery</a></li>
+        <li><a href="../pricing.html" class="nav-link">Pricing</a></li>
+        <li><a href="../contact.html" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar"><i class="fas fa-bars"></i></button>
+        <a href="../login.html" class="btn btn-outline btn-sm">Login</a>
+        <a href="../register.html" class="btn btn-primary btn-sm">Register</a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      </div>
+    </nav>
+  </header>
+
+  <div class="dashboard-layout">
+    <aside class="dashboard-sidebar" id="dashboardSidebar">
+      <div class="sidebar-header">
+        <h3>John Doe</h3>
+        <span>john.doe@email.com</span>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="#" class="active"><i class="fas fa-th-large"></i> Overview</a>
+        <a href="#bookings"><i class="fas fa-calendar-check"></i> My Bookings</a>
+        <a href="#history"><i class="fas fa-history"></i> Booking History</a>
+        <a href="#profile"><i class="fas fa-user"></i> My Profile</a>
+        <a href="#favorites"><i class="fas fa-heart"></i> Favorites</a>
+        <a href="../index.html"><i class="fas fa-sign-out-alt"></i> Sign Out</a>
+      </nav>
+    </aside>
+
+    <main class="dashboard-main">
+      <div class="dashboard-header">
+        <h1>Welcome back, John!</h1>
+        <div class="header-actions">
+          <a href="../fleet.html" class="btn btn-primary"><i class="fas fa-plus"></i> New Booking</a>
+        </div>
+      </div>
+
+      <div class="dashboard-cards">
+        <div class="dashboard-card">
+          <div class="card-icon blue"><i class="fas fa-ship"></i></div>
+          <h3>2</h3>
+          <p>Active Bookings</p>
+        </div>
+        <div class="dashboard-card">
+          <div class="card-icon green"><i class="fas fa-check-circle"></i></div>
+          <h3>8</h3>
+          <p>Completed Trips</p>
+        </div>
+        <div class="dashboard-card">
+          <div class="card-icon orange"><i class="fas fa-clock"></i></div>
+          <h3>12</h3>
+          <p>Hours Sailed</p>
+        </div>
+        <div class="dashboard-card">
+          <div class="card-icon purple"><i class="fas fa-heart"></i></div>
+          <h3>5</h3>
+          <p>Saved Yachts</p>
+        </div>
+      </div>
+
+      <div class="dashboard-table-wrap" id="bookings">
+        <h3><i class="fas fa-calendar-check"></i> Current Bookings</h3>
+        <table class="dashboard-table">
+          <thead>
+            <tr><th>Yacht</th><th>Date</th><th>Duration</th><th>Guests</th><th>Status</th><th>Action</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Ocean Supreme</strong></td>
+              <td>Jun 28, 2026</td>
+              <td>6 Hours</td>
+              <td>8</td>
+              <td><span class="status-badge confirmed">Confirmed</span></td>
+              <td><a href="#" style="color: var(--primary); font-size: 0.85rem;">View Details</a></td>
+            </tr>
+            <tr>
+              <td><strong>Celebration</strong></td>
+              <td>Jul 5, 2026</td>
+              <td>4 Hours</td>
+              <td>15</td>
+              <td><span class="status-badge pending">Pending</span></td>
+              <td><a href="#" style="color: var(--primary); font-size: 0.85rem;">View Details</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="dashboard-table-wrap" id="history" style="margin-top: 24px;">
+        <h3><i class="fas fa-history"></i> Booking History</h3>
+        <table class="dashboard-table">
+          <thead>
+            <tr><th>Yacht</th><th>Date</th><th>Duration</th><th>Guests</th><th>Total</th><th>Status</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Royal Diamond</strong></td>
+              <td>May 15, 2026</td>
+              <td>8 Hours</td>
+              <td>12</td>
+              <td>$3,200</td>
+              <td><span class="status-badge completed">Completed</span></td>
+            </tr>
+            <tr>
+              <td><strong>Velocity X</strong></td>
+              <td>Apr 22, 2026</td>
+              <td>3 Hours</td>
+              <td>4</td>
+              <td>$1,350</td>
+              <td><span class="status-badge completed">Completed</span></td>
+            </tr>
+            <tr>
+              <td><strong>Reel Master</strong></td>
+              <td>Mar 10, 2026</td>
+              <td>6 Hours</td>
+              <td>6</td>
+              <td>$3,600</td>
+              <td><span class="status-badge cancelled">Cancelled</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="dashboard-profile" id="profile" style="margin-top: 30px;">
+        <div class="profile-header">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80" alt="Profile" class="profile-avatar">
+          <div class="profile-info">
+            <h2>John Doe</h2>
+            <span>Member since 2024</span>
+          </div>
+        </div>
+        <form class="profile-form">
+          <div class="form-group"><input type="text" value="John" placeholder="First Name"></div>
+          <div class="form-group"><input type="text" value="Doe" placeholder="Last Name"></div>
+          <div class="form-group"><input type="email" value="john.doe@email.com" placeholder="Email"></div>
+          <div class="form-group"><input type="tel" value="+971 50 123 4567" placeholder="Phone"></div>
+          <div class="form-group full-width"><button type="submit" class="btn btn-primary">Save Changes</button></div>
+        </form>
+      </div>
+    </main>
+  </div>
+
+  <script src="../js/script.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggle = document.getElementById('sidebarToggle');
+    const sidebar = document.getElementById('dashboardSidebar');
+    if (toggle && sidebar) {
+      toggle.addEventListener('click', () => {
+        sidebar.classList.toggle('open');
+      });
+    }
+    document.querySelectorAll('.dashboard-sidebar .sidebar-nav a').forEach(link => {
+      link.addEventListener('click', function(e) {
+        if (this.getAttribute('href') === '../index.html') return;
+        e.preventDefault();
+        document.querySelectorAll('.dashboard-sidebar .sidebar-nav a').forEach(l => l.classList.remove('active'));
+        this.classList.add('active');
+        const target = this.getAttribute('href').replace('#', '');
+        if (target) {
+          const el = document.getElementById(target);
+          if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        if (window.innerWidth <= 768) sidebar.classList.remove('open');
+      });
+    });
+    document.querySelectorAll('.profile-form').forEach(f => {
+      f.addEventListener('submit', e => {
+        e.preventDefault();
+        const btn = f.querySelector('.btn');
+        btn.textContent = 'Saved!';
+        btn.style.background = 'linear-gradient(135deg, #2ECC71, #27AE60)';
+        setTimeout(() => { btn.textContent = 'Save Changes'; btn.style.background = ''; }, 2000);
+      });
+    });
+  });
+  </script>
+</body>
+</html>

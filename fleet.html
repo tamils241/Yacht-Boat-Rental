@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Stackly Fleet - Browse our collection of luxury yachts, speed boats, catamarans and more.">
+  <title>Our Fleet | Stackly Luxury Yacht Rental</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <div id="loading-screen">
+    <div class="loader-container">
+      <i class="fas fa-ship loader-icon"></i>
+      <div class="loader-bar"></div>
+      <p>Setting Sail...</p>
+    </div>
+  </div>
+
+  <button id="scroll-top-btn" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <header id="header">
+    <nav class="navbar container">
+      <a href="index.html" class="mobile-back" aria-label="Back to Home"><i class="fas fa-arrow-left"></i></a>
+      <a href="index.html" class="logo">
+        <i class="fas fa-ship"></i>
+        <span>Stackly</span>
+      </a>
+      <ul class="nav-menu" id="nav-menu">
+        <li><button class="nav-close" id="nav-close" aria-label="Close menu">&times;</button></li>
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="fleet.html" class="nav-link active">Fleet</a></li>
+        <li><a href="destinations.html" class="nav-link">Destinations</a></li>
+        <li><a href="services.html" class="nav-link">Services</a></li>
+        <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+        <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+        <li><a href="testimonials.html" class="nav-link">Testimonials</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="login.html" class="btn btn-outline btn-sm">Login</a>
+        <a href="register.html" class="btn btn-primary btn-sm">Register</a>
+        <a href="contact.html" class="btn btn-primary btn-sm book-now">Book Now</a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <section class="page-banner" style="background-image: url('./images/gallery/bg3_11zon.webp');">
+    <h1>Our Fleet</h1>
+    <p>Explore our collection of premium vessels, each crafted for the ultimate sea experience</p>
+    <div class="wave-container">
+      <svg class="wave" viewBox="0 0 1440 320" preserveAspectRatio="none">
+        <path fill="#ffffff" d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,213.3C672,224,768,224,864,213.3C960,203,1056,181,1152,181.3C1248,181,1344,203,1392,213.3L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+      </svg>
+    </div>
+  </section>
+
+  <section class="section fleet">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Categories</span>
+        <h2 class="section-title">Choose Your Perfect Vessel</h2>
+        <p class="section-desc">From intimate speed boats to grand luxury yachts, we have the perfect vessel for every occasion.</p>
+      </div>
+      <div class="fleet-filters reveal">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="luxury">Luxury Yacht</button>
+        <button class="filter-btn" data-filter="speed">Speed Boat</button>
+        <button class="filter-btn" data-filter="fishing">Fishing Boat</button>
+        <button class="filter-btn" data-filter="catamaran">Catamaran</button>
+        <button class="filter-btn" data-filter="party">Party Yacht</button>
+      </div>
+      <div class="fleet-page-grid" id="fleet-grid">
+        <div class="fleet-card reveal flip-card" data-category="luxury">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="fleet-img">
+                <img src="./images/fleet/Ocean_11zon.webp" alt="Ocean Supreme">
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <h3>Ocean Supreme</h3>
+              <div class="fleet-specs">
+                <span><i class="fas fa-user"></i> 12 Guests</span>
+                <span><i class="fas fa-ruler"></i> 85 ft</span>
+                <span><i class="fas fa-tachometer-alt"></i> 28 knots</span>
+              </div>
+              <div class="fleet-price">
+                <span class="price">$1,200<span>/hr</span></span>
+                <div class="rating">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+              </div>
+              <a href="contact.html" class="btn btn-primary btn-sm">Book Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="fleet-card reveal flip-card" data-category="speed">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="fleet-img">
+                <img src="./images/fleet/Velocity_11zon.webp" alt="Velocity X">
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <h3>Velocity X</h3>
+              <div class="fleet-specs">
+                <span><i class="fas fa-user"></i> 6 Guests</span>
+                <span><i class="fas fa-ruler"></i> 42 ft</span>
+                <span><i class="fas fa-tachometer-alt"></i> 52 knots</span>
+              </div>
+              <div class="fleet-price">
+                <span class="price">$450<span>/hr</span></span>
+                <div class="rating">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+              </div>
+              <a href="contact.html" class="btn btn-primary btn-sm">Book Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="fleet-card reveal flip-card" data-category="fishing">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="fleet-img">
+                <img src="./images/fleet/Reel_11zon.webp" alt="Reel Master">
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <h3>Reel Master</h3>
+              <div class="fleet-specs">
+                <span><i class="fas fa-user"></i> 8 Guests</span>
+                <span><i class="fas fa-ruler"></i> 52 ft</span>
+                <span><i class="fas fa-tachometer-alt"></i> 22 knots</span>
+              </div>
+              <div class="fleet-price">
+                <span class="price">$600<span>/hr</span></span>
+                <div class="rating">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                </div>
+              </div>
+              <a href="contact.html" class="btn btn-primary btn-sm">Book Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="fleet-card reveal flip-card" data-category="catamaran">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="fleet-img">
+                <img src="./images/fleet/Tropical_11zon.webp" alt="Tropical Twin">
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <h3>Tropical Twin</h3>
+              <div class="fleet-specs">
+                <span><i class="fas fa-user"></i> 16 Guests</span>
+                <span><i class="fas fa-ruler"></i> 62 ft</span>
+                <span><i class="fas fa-tachometer-alt"></i> 18 knots</span>
+              </div>
+              <div class="fleet-price">
+                <span class="price">$950<span>/hr</span></span>
+                <div class="rating">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+              </div>
+              <a href="contact.html" class="btn btn-primary btn-sm">Book Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="fleet-card reveal flip-card" data-category="party">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="fleet-img">
+                <img src="./images/fleet/Celebration_11zon.webp" alt="Celebration">
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <h3>Celebration</h3>
+              <div class="fleet-specs">
+                <span><i class="fas fa-user"></i> 30 Guests</span>
+                <span><i class="fas fa-ruler"></i> 95 ft</span>
+                <span><i class="fas fa-tachometer-alt"></i> 24 knots</span>
+              </div>
+              <div class="fleet-price">
+                <span class="price">$1,800<span>/hr</span></span>
+                <div class="rating">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+              </div>
+              <a href="contact.html" class="btn btn-primary btn-sm">Book Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="fleet-card reveal flip-card" data-category="luxury">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="fleet-img">
+                <img src="./images/fleet/Royal_11zon.webp" alt="Royal Diamond">
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <h3>Royal Diamond</h3>
+              <div class="fleet-specs">
+                <span><i class="fas fa-user"></i> 20 Guests</span>
+                <span><i class="fas fa-ruler"></i> 120 ft</span>
+                <span><i class="fas fa-tachometer-alt"></i> 26 knots</span>
+              </div>
+              <div class="fleet-price">
+                <span class="price">$2,500<span>/hr</span></span>
+                <div class="rating">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+              </div>
+              <a href="contact.html" class="btn btn-primary btn-sm">Book Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="fleet-card reveal flip-card" data-category="luxury">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="fleet-img">
+                <img src="./images/fleet/Starfish_11zon.webp" alt="Starfish">
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <h3>Starfish</h3>
+              <div class="fleet-specs">
+                <span><i class="fas fa-user"></i> 10 Guests</span>
+                <span><i class="fas fa-ruler"></i> 72 ft</span>
+                <span><i class="fas fa-tachometer-alt"></i> 30 knots</span>
+              </div>
+              <div class="fleet-price">
+                <span class="price">$1,100<span>/hr</span></span>
+                <div class="rating">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+              </div>
+              <a href="contact.html" class="btn btn-primary btn-sm">Book Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="fleet-card reveal flip-card" data-category="speed">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="fleet-img">
+                <img src="./images/fleet/Jet_11zon.webp" alt="Jet Racer">
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <h3>Jet Racer</h3>
+              <div class="fleet-specs">
+                <span><i class="fas fa-user"></i> 4 Guests</span>
+                <span><i class="fas fa-ruler"></i> 35 ft</span>
+                <span><i class="fas fa-tachometer-alt"></i> 60 knots</span>
+              </div>
+              <div class="fleet-price">
+                <span class="price">$350<span>/hr</span></span>
+                <div class="rating">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                </div>
+              </div>
+              <a href="contact.html" class="btn btn-primary btn-sm">Book Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="fleet-card reveal flip-card" data-category="catamaran">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="fleet-img">
+                <img src="./images/fleet/Sea_11zon.webp" alt="Sea Breeze">
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <h3>Sea Breeze</h3>
+              <div class="fleet-specs">
+                <span><i class="fas fa-user"></i> 14 Guests</span>
+                <span><i class="fas fa-ruler"></i> 55 ft</span>
+                <span><i class="fas fa-tachometer-alt"></i> 20 knots</span>
+              </div>
+              <div class="fleet-price">
+                <span class="price">$850<span>/hr</span></span>
+                <div class="rating">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+              </div>
+              <a href="contact.html" class="btn btn-primary btn-sm">Book Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="fleet-card reveal flip-card" data-category="party">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="fleet-img">
+                <img src="./images/fleet/Wave_11zon.webp" alt="Wave Rider">
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <h3>Wave Rider</h3>
+              <div class="fleet-specs">
+                <span><i class="fas fa-user"></i> 24 Guests</span>
+                <span><i class="fas fa-ruler"></i> 78 ft</span>
+                <span><i class="fas fa-tachometer-alt"></i> 22 knots</span>
+              </div>
+              <div class="fleet-price">
+                <span class="price">$1,500<span>/hr</span></span>
+                <div class="rating">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+              </div>
+              <a href="contact.html" class="btn btn-primary btn-sm">Book Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="fleet-card reveal flip-card" data-category="fishing">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="fleet-img">
+                <img src="./images/fleet/Sea_11zon.webp" alt="Blue Marlin">
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <h3>Blue Marlin</h3>
+              <div class="fleet-specs">
+                <span><i class="fas fa-user"></i> 10 Guests</span>
+                <span><i class="fas fa-ruler"></i> 58 ft</span>
+                <span><i class="fas fa-tachometer-alt"></i> 25 knots</span>
+              </div>
+              <div class="fleet-price">
+                <span class="price">$700<span>/hr</span></span>
+                <div class="rating">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+              </div>
+              <a href="contact.html" class="btn btn-primary btn-sm">Book Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="fleet-card reveal flip-card" data-category="luxury">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="fleet-img">
+                <img src="./images/fleet/Crystal_11zon.webp" alt="Crystal Empress">
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <h3>Crystal Empress</h3>
+              <div class="fleet-specs">
+                <span><i class="fas fa-user"></i> 18 Guests</span>
+                <span><i class="fas fa-ruler"></i> 110 ft</span>
+                <span><i class="fas fa-tachometer-alt"></i> 25 knots</span>
+              </div>
+              <div class="fleet-price">
+                <span class="price">$2,200<span>/hr</span></span>
+                <div class="rating">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+              </div>
+              <a href="contact.html" class="btn btn-primary btn-sm">Book Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background: var(--white);">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Compare</span>
+        <h2 class="section-title">Find the Right Fit</h2>
+        <p class="section-desc">Not sure which vessel to choose? Compare our most popular categories.</p>
+      </div>
+      <div class="fleet-compare">
+        <div class="fleet-compare-card reveal">
+          <i class="fas fa-ship" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 16px;"></i>
+          <h4>Luxury Yacht</h4>
+          <div class="spec">Capacity: 12-30 guests</div>
+          <div class="spec">Length: 85-150 ft</div>
+          <div class="spec">Best for: Premium events</div>
+        </div>
+        <div class="fleet-compare-card reveal">
+          <i class="fas fa-rocket" style="font-size: 2.5rem; color: var(--secondary); margin-bottom: 16px;"></i>
+          <h4>Speed Boat</h4>
+          <div class="spec">Capacity: 4-8 guests</div>
+          <div class="spec">Length: 30-50 ft</div>
+          <div class="spec">Best for: Adventure seekers</div>
+        </div>
+        <div class="fleet-compare-card reveal">
+          <i class="fas fa-water" style="font-size: 2.5rem; color: var(--dark-blue); margin-bottom: 16px;"></i>
+          <h4>Catamaran</h4>
+          <div class="spec">Capacity: 12-24 guests</div>
+          <div class="spec">Length: 40-70 ft</div>
+          <div class="spec">Best for: Family & groups</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand reveal">
+          <a href="index.html" class="logo">
+            <i class="fas fa-ship"></i>
+            <span>Stackly</span>
+          </a>
+          <p>Setting the standard for luxury yacht and boat rental experiences worldwide.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer-links reveal">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="fleet.html">Fleet</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-links reveal">
+          <h3>My Account</h3>
+          <ul>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="dashboard/user-dashboard.html">User Dashboard</a></li>
+            <li><a href="dashboard/admin-dashboard.html">Admin Dashboard</a></li>
+          </ul>
+        </div>
+        <div class="footer-links reveal">
+          <h3>Services</h3>
+          <ul>
+            <li><a href="services.html">Yacht Charter</a></li>
+            <li><a href="services.html">Fishing Trips</a></li>
+            <li><a href="services.html">Wedding Cruises</a></li>
+            <li><a href="services.html">Corporate Events</a></li>
+            <li><a href="services.html">Sunset Cruises</a></li>
+          </ul>
+        </div>
+        <div class="footer-newsletter reveal">
+          <h3>Newsletter</h3>
+          <p>Subscribe for exclusive offers and updates.</p>
+          <form id="newsletter-form">
+            <div class="newsletter-group">
+              <input type="email" placeholder="Your Email" required>
+              <button type="submit" aria-label="Subscribe"><i class="fas fa-paper-plane"></i></button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Stackly. All rights reserved. | Luxury Yacht & Boat Rental</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

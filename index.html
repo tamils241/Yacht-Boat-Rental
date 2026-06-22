@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Stackly - Premium Yacht & Boat Rental Services. Explore luxury yacht experiences, exclusive destinations, and memorable sea adventures.">
+  <meta name="keywords" content="yacht rental, boat rental, luxury yacht, stackly, boat charter, Maldives, Dubai, yacht experience">
+  <meta name="author" content="Stackly">
+  <title>Stackly | Luxury Yacht & Boat Rental</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Loading Screen -->
+  <div id="loading-screen">
+    <div class="loader-container">
+      <i class="fas fa-ship loader-icon"></i>
+      <div class="loader-bar"></div>
+      <p>Setting Sail...</p>
+    </div>
+  </div>
+
+  <!-- Scroll To Top -->
+  <button id="scroll-top-btn" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- Header / Navbar -->
+  <header id="header">
+    <nav class="navbar container">
+      <a href="#home" class="mobile-back" aria-label="Back to top"><i class="fas fa-arrow-up"></i></a>
+      <a href="#home" class="logo">
+        <i class="fas fa-ship"></i>
+        <span>Stackly</span>
+      </a>
+      <ul class="nav-menu" id="nav-menu">
+        <li><button class="nav-close" id="nav-close" aria-label="Close menu">&times;</button></li>
+        <li><a href="index.html" class="nav-link active">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="fleet.html" class="nav-link">Fleet</a></li>
+        <li><a href="destinations.html" class="nav-link">Destinations</a></li>
+        <li><a href="services.html" class="nav-link">Services</a></li>
+        <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+        <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+        <li><a href="testimonials.html" class="nav-link">Testimonials</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="login.html" class="btn btn-outline btn-sm">Login</a>
+        <a href="register.html" class="btn btn-primary btn-sm">Register</a>
+        <a href="contact.html" class="btn btn-primary btn-sm book-now">Book Now</a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-slider" id="hero-slider">
+      <div class="slide active" style="background-image: url('./images/gallery/bg1_11zon.webp');"></div>
+      <div class="slide" style="background-image: url('./images/gallery/bg3_11zon.webp');"></div>
+      <div class="slide" style="background-image: url('./images/gallery/bg4_11zon.webp');"></div>
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="wave-container">
+      <svg class="wave" viewBox="0 0 1440 320" preserveAspectRatio="none">
+        <path fill="#ffffff" d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,213.3C672,224,768,224,864,213.3C960,203,1056,181,1152,181.3C1248,181,1344,203,1392,213.3L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+      </svg>
+    </div>
+    <div class="hero-content container">
+      <div class="hero-text">
+        <h1 class="hero-title">Experience Luxury on the Open Sea</h1>
+        <p class="hero-subtitle">Rent Premium Yachts & Boats for Unforgettable Adventures</p>
+        <div class="hero-buttons">
+          <a href="fleet.html" class="btn btn-primary btn-lg" style="animation-delay: 0.4s">View Fleet</a>
+          <a href="contact.html" class="btn btn-outline btn-lg" style="animation-delay: 0.6s">Book Yacht</a>
+        </div>
+      </div>
+      <div class="floating-yacht">
+        <i class="fas fa-ship"></i>
+      </div>
+      <div class="hero-search">
+        <form class="search-form" id="search-form">
+          <div class="form-group">
+            <i class="fas fa-ship"></i>
+            <select name="boat-type" id="boat-type">
+              <option value="">Select Boat</option>
+              <option value="luxury">Luxury Yacht</option>
+              <option value="speed">Speed Boat</option>
+              <option value="fishing">Fishing Boat</option>
+              <option value="catamaran">Catamaran</option>
+              <option value="party">Party Yacht</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <i class="fas fa-calendar"></i>
+            <input type="date" id="check-date" min="">
+          </div>
+          <div class="form-group">
+            <i class="fas fa-user"></i>
+            <input type="number" id="guests" placeholder="Guests" min="1" max="50">
+          </div>
+          <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+      </div>
+    </div>
+  
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section about">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">About Stackly</span>
+        <h2 class="section-title">Setting the Standard for Luxury Rentals</h2>
+        <p class="section-desc">We provide world-class yacht and boat rental experiences with unmatched service and safety.</p>
+      </div>
+      <div class="about-grid">
+        <div class="about-content reveal">
+          <h3>Our Story</h3>
+          <p>Stackly was founded with a vision to make luxury sea experiences accessible to everyone. With a fleet of meticulously maintained vessels and a team of seasoned professionals, we deliver unforgettable journeys across the world's most beautiful waters.</p>
+          <p>Our commitment to excellence, safety, and customer satisfaction has made us a trusted name in the yacht rental industry.</p>
+          <div class="about-features">
+            <div class="about-feature">
+              <i class="fas fa-anchor"></i>
+              <span>10+ Years of Experience in luxury yachting</span>
+            </div>
+            <div class="about-feature">
+              <i class="fas fa-users"></i>
+              <span>Professional Crew with maritime certifications</span>
+            </div>
+            <div class="about-feature">
+              <i class="fas fa-shield-alt"></i>
+              <span>Safety Standards: ISO Certified & Fully Insured</span>
+            </div>
+            <div class="about-feature">
+              <i class="fas fa-gem"></i>
+              <span>Luxury Services tailored to your preferences</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-stats reveal">
+          <div class="stat-card">
+            <span class="stat-number" data-target="500">0</span>
+            <span class="stat-label">Happy Clients</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number" data-target="100">0</span>
+            <span class="stat-label">Luxury Boats</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number" data-target="50">0</span>
+            <span class="stat-label">Destinations</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number" data-target="24">0</span>
+            <span class="stat-label">/7 Support</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fleet Section -->
+  <section id="fleet" class="section fleet">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Our Fleet</span>
+        <h2 class="section-title">Choose Your Vessel</h2>
+        <p class="section-desc">From luxury yachts to speed boats, find the perfect vessel for your adventure.</p>
+      </div>
+      <div class="fleet-filters reveal">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="luxury">Luxury Yacht</button>
+        <button class="filter-btn" data-filter="speed">Speed Boat</button>
+        <button class="filter-btn" data-filter="fishing">Fishing Boat</button>
+        <button class="filter-btn" data-filter="catamaran">Catamaran</button>
+        <button class="filter-btn" data-filter="party">Party Yacht</button>
+      </div>
+      <div class="fleet-grid" id="fleet-grid">
+        <div class="fleet-card reveal flip-card" data-category="luxury">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="fleet-img">
+                <h3>Ocean Supreme</h3>
+                <img src="./images/fleet/Ocean_11zon.webp" alt="Ocean Supreme">
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <h3>Ocean Supreme</h3>
+              <div class="fleet-specs">
+                <span><i class="fas fa-user"></i> 12 Guests</span>
+                <span><i class="fas fa-ruler"></i> 85 ft</span>
+              </div>
+              <div class="fleet-price">
+                <span class="price">$1,200<span>/hr</span></span>
+                <div class="rating">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+              </div>
+              <a href="contact.html" class="btn btn-primary btn-sm">Book Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="fleet-card reveal flip-card" data-category="speed">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="fleet-img">
+                <h3>Velocity X</h3>
+                <img src="./images/fleet/Velocity_11zon.webp" alt="Velocity X">
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <h3>Velocity X</h3>
+              <div class="fleet-specs">
+                <span><i class="fas fa-user"></i> 6 Guests</span>
+                <span><i class="fas fa-ruler"></i> 42 ft</span>
+              </div>
+              <div class="fleet-price">
+                <span class="price">$450<span>/hr</span></span>
+                <div class="rating">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+              </div>
+              <a href="contact.html" class="btn btn-primary btn-sm">Book Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="fleet-card reveal flip-card" data-category="fishing">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="fleet-img">
+                <h3>Reel Master</h3>
+                <img src="./images/fleet/Reel_11zon.webp" alt="Reel Master">
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <h3>Reel Master</h3>
+              <div class="fleet-specs">
+                <span><i class="fas fa-user"></i> 8 Guests</span>
+                <span><i class="fas fa-ruler"></i> 52 ft</span>
+              </div>
+              <div class="fleet-price">
+                <span class="price">$600<span>/hr</span></span>
+                <div class="rating">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                </div>
+              </div>
+              <a href="contact.html" class="btn btn-primary btn-sm">Book Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="fleet-card reveal flip-card" data-category="catamaran">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="fleet-img">
+                <h3>Tropical Twin</h3>
+                <img src="./images/gallery/bg3_11zon.webp" alt="Tropical Twin">
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <h3>Tropical Twin</h3>
+              <div class="fleet-specs">
+                <span><i class="fas fa-user"></i> 16 Guests</span>
+                <span><i class="fas fa-ruler"></i> 62 ft</span>
+              </div>
+              <div class="fleet-price">
+                <span class="price">$950<span>/hr</span></span>
+                <div class="rating">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+              </div>
+              <a href="contact.html" class="btn btn-primary btn-sm">Book Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="fleet-card reveal flip-card" data-category="party">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="fleet-img">
+                 <h3>Celebration</h3>
+                <img src="./images/fleet/Celebration_11zon.webp" alt="Celebration">
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <h3>Celebration</h3>
+              <div class="fleet-specs">
+                <span><i class="fas fa-user"></i> 30 Guests</span>
+                <span><i class="fas fa-ruler"></i> 95 ft</span>
+              </div>
+              <div class="fleet-price">
+                <span class="price">$1,800<span>/hr</span></span>
+                <div class="rating">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+              </div>
+              <a href="contact.html" class="btn btn-primary btn-sm">Book Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="fleet-card reveal flip-card" data-category="luxury">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="fleet-img">
+                 <h3>Royal Diamond</h3>
+                <img src="./images/fleet/Royal_11zon.webp" alt="Royal Diamond">
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <h3>Royal Diamond</h3>
+              <div class="fleet-specs">
+                <span><i class="fas fa-user"></i> 20 Guests</span>
+                <span><i class="fas fa-ruler"></i> 120 ft</span>
+              </div>
+              <div class="fleet-price">
+                <span class="price">$2,500<span>/hr</span></span>
+                <div class="rating">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+              </div>
+              <a href="contact.html" class="btn btn-primary btn-sm">Book Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Destinations Section -->
+  <section id="destinations" class="section destinations">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Destinations</span>
+        <h2 class="section-title">Explore Popular Waters</h2>
+        <p class="section-desc">Discover the most breathtaking destinations for your next voyage.</p>
+      </div>
+      <div class="dest-grid">
+        <div class="dest-card reveal flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="dest-img">
+                <h3>Maldives</h3>
+                <img src="./images/destinations/Maldives_11zon.webp" alt="Maldives">
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <h3>Maldives</h3>
+              <p><i class="fas fa-clock"></i> 5 Days / 4 Nights</p>
+              <span class="dest-price">From $2,500</span>
+            </div>
+          </div>
+        </div>
+        <div class="dest-card reveal flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="dest-img">
+                <h3>Dubai Marina</h3>
+                <img src="./images/destinations/Dubai_11zon.webp" alt="Dubai Marina">
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <h3>Dubai Marina</h3>
+              <p><i class="fas fa-clock"></i> 3 Days / 2 Nights</p>
+              <span class="dest-price">From $3,200</span>
+            </div>
+          </div>
+        </div>
+        <div class="dest-card reveal flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="dest-img">
+                <h3>Bali</h3>
+                <img src="./images/destinations/Bali_11zon.webp" alt="Bali">
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <h3>Bali</h3>
+              <p><i class="fas fa-clock"></i> 4 Days / 3 Nights</p>
+              <span class="dest-price">From $1,800</span>
+            </div>
+          </div>
+        </div>
+        <div class="dest-card reveal flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="dest-img">
+                 <h3>Phuket</h3>
+                <img src="./images/destinations/Phuket_11zon.webp" alt="Phuket">
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <h3>Phuket</h3>
+              <p><i class="fas fa-clock"></i> 4 Days / 3 Nights</p>
+              <span class="dest-price">From $1,600</span>
+            </div>
+          </div>
+        </div>
+        <div class="dest-card reveal flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="dest-img">
+                <h3>Miami Beach</h3>
+                <img src="./images/destinations/Miami_11zon.webp" alt="Miami Beach">
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <h3>Miami Beach</h3>
+              <p><i class="fas fa-clock"></i> 3 Days / 2 Nights</p>
+              <span class="dest-price">From $2,000</span>
+            </div>
+          </div>
+        </div>
+        <div class="dest-card reveal flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="dest-img">
+                <h3>Greek Islands</h3>
+                <img src="./images/destinations/Greek_11zon.webp" alt="Greek Islands">
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <h3>Greek Islands</h3>
+              <p><i class="fas fa-clock"></i> 7 Days / 6 Nights</p>
+              <span class="dest-price">From $3,500</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="section services">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Our Services</span>
+        <h2 class="section-title">Premium Experiences at Sea</h2>
+        <p class="section-desc">From romantic cruises to corporate events, we offer a wide range of services.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <div class="service-icon"><i class="fas fa-ship"></i></div>
+          <h3>Yacht Charter</h3>
+          <p>Private yacht rentals with full crew for your perfect day on the water.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon"><i class="fas fa-fish"></i></div>
+          <h3>Fishing Trips</h3>
+          <p>Deep-sea fishing adventures with expert guides and top equipment.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon"><i class="fas fa-heart"></i></div>
+          <h3>Wedding Cruises</h3>
+          <p>Say "I do" on the water with our elegant wedding packages.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon"><i class="fas fa-briefcase"></i></div>
+          <h3>Corporate Events</h3>
+          <p>Impress clients and team members with luxury corporate charters.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon"><i class="fas fa-birthday-cake"></i></div>
+          <h3>Birthday Parties</h3>
+          <p>Celebrate your special day with an unforgettable party at sea.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon"><i class="fas fa-sun"></i></div>
+          <h3>Sunset Cruises</h3>
+          <p>Watch the sunset from the deck with drinks and gourmet dining.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon"><i class="fas fa-water"></i></div>
+          <h3>Water Sports</h3>
+          <p>Jet skiing, snorkeling, diving and more water activities.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon"><i class="fas fa-map-marked-alt"></i></div>
+          <h3>Island Tours</h3>
+          <p>Explore exotic islands with guided tours and beach stops.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking Process Section -->
+  <section id="booking" class="section booking-process">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">How It Works</span>
+        <h2 class="section-title">Book in 4 Easy Steps</h2>
+        <p class="section-desc">Your dream yacht experience is just a few clicks away.</p>
+      </div>
+      <div class="steps-container">
+        <div class="step reveal">
+          <div class="step-number">1</div>
+          <div class="step-icon"><i class="fas fa-ship"></i></div>
+          <h3>Select Yacht</h3>
+          <p>Browse our fleet and choose the perfect vessel.</p>
+        </div>
+        <div class="step reveal">
+          <div class="step-number">2</div>
+          <div class="step-icon"><i class="fas fa-calendar-check"></i></div>
+          <h3>Choose Date</h3>
+          <p>Pick your preferred date and duration.</p>
+        </div>
+        <div class="step reveal">
+          <div class="step-number">3</div>
+          <div class="step-icon"><i class="fas fa-check-circle"></i></div>
+          <h3>Confirm Booking</h3>
+          <p>Review details and confirm your reservation.</p>
+        </div>
+        <div class="step reveal">
+          <div class="step-number">4</div>
+          <div class="step-icon"><i class="fas fa-smile"></i></div>
+          <h3>Enjoy Your Trip</h3>
+          <p>Set sail and create unforgettable memories.</p>
+        </div>
+        <div class="steps-line"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section id="pricing" class="section pricing">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Pricing</span>
+        <h2 class="section-title">Transparent Pricing Plans</h2>
+        <p class="section-desc">Choose the package that suits your needs and budget.</p>
+      </div>
+      <div class="pricing-grid">
+        <div class="pricing-card reveal">
+          <div class="pricing-badge">Basic</div>
+          <div class="pricing-icon"><i class="fas fa-ship"></i></div>
+          <h3>Basic Package</h3>
+          <div class="pricing-amount">
+            <span class="currency">$</span>
+            <span class="amount">299</span>
+          </div>
+          <ul class="pricing-features">
+            <li><i class="fas fa-check"></i> Small Boat</li>
+            <li><i class="fas fa-check"></i> 2 Hours Duration</li>
+            <li><i class="fas fa-check"></i> Up to 6 Guests</li>
+            <li><i class="fas fa-check"></i> Basic Amenities</li>
+            <li><i class="fas fa-times"></i> Crew Included</li>
+            <li><i class="fas fa-times"></i> Food & Beverages</li>
+          </ul>
+          <a href="contact.html" class="btn btn-primary">Get Started</a>
+        </div>
+        <div class="pricing-card pricing-popular reveal">
+          <div class="pricing-badge">Popular</div>
+          <div class="pricing-icon"><i class="fas fa-anchor"></i></div>
+          <h3>Premium Package</h3>
+          <div class="pricing-amount">
+            <span class="currency">$</span>
+            <span class="amount">899</span>
+          </div>
+          <ul class="pricing-features">
+            <li><i class="fas fa-check"></i> Luxury Yacht</li>
+            <li><i class="fas fa-check"></i> 6 Hours Duration</li>
+            <li><i class="fas fa-check"></i> Up to 12 Guests</li>
+            <li><i class="fas fa-check"></i> Premium Amenities</li>
+            <li><i class="fas fa-check"></i> Crew Included</li>
+            <li><i class="fas fa-times"></i> Food & Beverages</li>
+          </ul>
+          <a href="contact.html" class="btn btn-primary">Get Started</a>
+        </div>
+        <div class="pricing-card reveal">
+          <div class="pricing-badge">VIP</div>
+          <div class="pricing-icon"><i class="fas fa-crown"></i></div>
+          <h3>VIP Package</h3>
+          <div class="pricing-amount">
+            <span class="currency">$</span>
+            <span class="amount">2,499</span>
+          </div>
+          <ul class="pricing-features">
+            <li><i class="fas fa-check"></i> Full Day Charter</li>
+            <li><i class="fas fa-check"></i> 12 Hours Duration</li>
+            <li><i class="fas fa-check"></i> Up to 20 Guests</li>
+            <li><i class="fas fa-check"></i> VIP Amenities</li>
+            <li><i class="fas fa-check"></i> Private Crew</li>
+            <li><i class="fas fa-check"></i> Gourmet Dining</li>
+          </ul>
+          <a href="contact.html" class="btn btn-primary">Get Started</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <img class="lightbox-content" id="lightbox-img">
+  </div>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="section testimonials">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Testimonials</span>
+        <h2 class="section-title">What Our Clients Say</h2>
+        <p class="section-desc">Hear from those who have experienced Stackly.</p>
+      </div>
+      <div class="testimonial-container reveal">
+        <div class="testimonial-slider" id="testimonial-slider">
+          <div class="testimonial-slide active">
+            <div class="testimonial-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p class="testimonial-text">"An absolutely incredible experience! The yacht was stunning, the crew was professional, and the views were breathtaking. Stackly made our anniversary unforgettable."</p>
+            <div class="testimonial-author">
+              <img src="images/team/1.webp" alt="Sarah Johnson">
+              <div>
+                <h4>Sarah Johnson</h4>
+                <span>Maldives Tour</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-slide">
+            <div class="testimonial-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p class="testimonial-text">"Booked a corporate event with Stackly and it exceeded all expectations. The team handled everything flawlessly. Highly recommend for any special occasion."</p>
+            <div class="testimonial-author">
+              <img src="images/team/2.webp" alt="Michael Chen">
+              <div>
+                <h4>Michael Chen</h4>
+                <span>Corporate Event</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-slide">
+            <div class="testimonial-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+            </div>
+            <p class="testimonial-text">"The sunset cruise was magical! Everything was perfect from the booking process to the actual trip. The crew made us feel like royalty. Can't wait to do it again!"</p>
+            <div class="testimonial-author">
+              <img src="images/team/3.webp" alt="Emily Davis">
+              <div>
+                <h4>Emily Davis</h4>
+                <span>Sunset Cruise</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-controls">
+          <button class="testimonial-btn prev-btn" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
+          <div class="testimonial-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+          <button class="testimonial-btn next-btn" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="section" style="background: var(--white);">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">FAQ</span>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-desc">Everything you need to know before booking your yacht experience.</p>
+      </div>
+      <div class="pricing-faq reveal" style="margin-top: 0;">
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            How do I book a yacht?
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">Simply browse our fleet, select your preferred vessel, choose your date and duration, and submit a booking request. Our team will confirm within 2 hours.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            Is a captain included?
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">Yes, all our rentals include a licensed captain and crew. Premium and VIP packages also include additional crew members for catering and service.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            Can I cancel my booking?
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">Free cancellation is available up to 48 hours before departure. A 50% refund is offered for cancellations between 24-48 hours. No refunds within 24 hours.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            What safety measures are in place?
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">All vessels are equipped with life jackets, GPS tracking, first aid kits, and emergency communication systems. Our crew is trained in advanced safety procedures.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            What is the maximum guest capacity?
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">Capacity varies by vessel, ranging from 6 guests on speed boats to 30 guests on party yachts. VIP yachts can accommodate up to 20 guests for full-day charters.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            Are food and beverages included?
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">Basic packages include water and soft drinks. Premium packages include a full catering menu. VIP packages feature gourmet dining with a private chef.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand reveal">
+          <a href="#home" class="logo">
+            <i class="fas fa-ship"></i>
+            <span>Stackly</span>
+          </a>
+          <p>Setting the standard for luxury yacht and boat rental experiences worldwide. Your adventure begins with us.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer-links reveal">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="fleet.html">Fleet</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-links reveal">
+          <h3>My Account</h3>
+          <ul>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="dashboard/user-dashboard.html">User Dashboard</a></li>
+            <li><a href="dashboard/admin-dashboard.html">Admin Dashboard</a></li>
+          </ul>
+        </div>
+        <div class="footer-links reveal">
+          <h3>Services</h3>
+          <ul>
+            <li><a href="services.html">Yacht Charter</a></li>
+            <li><a href="services.html">Fishing Trips</a></li>
+            <li><a href="services.html">Wedding Cruises</a></li>
+            <li><a href="services.html">Corporate Events</a></li>
+            <li><a href="services.html">Sunset Cruises</a></li>
+          </ul>
+        </div>
+        <div class="footer-newsletter reveal">
+          <h3>Newsletter</h3>
+          <p>Subscribe for exclusive offers and updates.</p>
+          <form id="newsletter-form">
+            <div class="newsletter-group">
+              <input type="email" placeholder="Your Email" required>
+              <button type="submit" aria-label="Subscribe"><i class="fas fa-paper-plane"></i></button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Stackly. All rights reserved. | Luxury Yacht & Boat Rental</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script>
+  function toggleFaq(el) {
+    el.classList.toggle('active');
+    const answer = el.nextElementSibling;
+    answer.classList.toggle('open');
+  }
+  </script>
+</body>
+</html>
