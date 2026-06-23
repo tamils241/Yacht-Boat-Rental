@@ -82,12 +82,47 @@ document.addEventListener('DOMContentLoaded', () => {
     navClose.addEventListener('click', closeMenu);
   }
 
-  navLinks.forEach(link => {
-    link.addEventListener('click', closeMenu);
+  // Nav dropdown toggle
+  const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+  dropdownToggles.forEach(toggle => {
+    toggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      const dropdown = toggle.closest('.nav-dropdown');
+      if (dropdown) {
+        dropdown.classList.toggle('open');
+      }
+    });
   });
+
+  // Close menu on nav link click (exclude dropdown toggle)
+  navLinks.forEach(link => {
+    if (!link.classList.contains('dropdown-toggle')) {
+      link.addEventListener('click', closeMenu);
+    }
+  });
+
+  // Close dropdowns when closing menu
+  function closeAllDropdowns() {
+    document.querySelectorAll('.nav-dropdown.open').forEach(d => d.classList.remove('open'));
+  }
+
+  const origCloseMenu = closeMenu;
+  closeMenu = function() {
+    closeAllDropdowns();
+    origCloseMenu();
+  };
 
   // Close menu on overlay click
   navOverlay.addEventListener('click', closeMenu);
+
+  // Close dropdown on outside click (desktop)
+  document.addEventListener('click', (e) => {
+    document.querySelectorAll('.nav-dropdown.open').forEach(dropdown => {
+      if (!dropdown.contains(e.target)) {
+        dropdown.classList.remove('open');
+      }
+    });
+  });
 
   // ==========================================
   // Active Menu Highlight

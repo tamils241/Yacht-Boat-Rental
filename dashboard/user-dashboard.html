@@ -73,6 +73,58 @@
           <p>Saved Yachts</p>
         </div>
       </div>
+
+      <div class="dashboard-charts">
+        <div class="chart-card">
+          <h3><i class="fas fa-chart-bar"></i> Monthly Bookings</h3>
+          <div class="chart-bars">
+            <div class="chart-bar-item">
+              <span>Jan</span>
+              <div class="chart-bar"><div class="chart-fill" style="height: 60%;"></div></div>
+            </div>
+            <div class="chart-bar-item">
+              <span>Feb</span>
+              <div class="chart-bar"><div class="chart-fill" style="height: 45%;"></div></div>
+            </div>
+            <div class="chart-bar-item">
+              <span>Mar</span>
+              <div class="chart-bar"><div class="chart-fill" style="height: 70%;"></div></div>
+            </div>
+            <div class="chart-bar-item">
+              <span>Apr</span>
+              <div class="chart-bar"><div class="chart-fill" style="height: 55%;"></div></div>
+            </div>
+            <div class="chart-bar-item">
+              <span>May</span>
+              <div class="chart-bar"><div class="chart-fill" style="height: 80%;"></div></div>
+            </div>
+            <div class="chart-bar-item">
+              <span>Jun</span>
+              <div class="chart-bar"><div class="chart-fill" style="height: 90%;"></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="chart-card">
+          <h3><i class="fas fa-clock"></i> Upcoming Trips</h3>
+          <div class="upcoming-list">
+            <div class="upcoming-item">
+              <div class="upcoming-date"><span>28</span>Jun</div>
+              <div class="upcoming-info"><strong>Ocean Supreme</strong><span>6 hrs · 8 guests</span></div>
+              <span class="status-badge confirmed">Confirmed</span>
+            </div>
+            <div class="upcoming-item">
+              <div class="upcoming-date"><span>5</span>Jul</div>
+              <div class="upcoming-info"><strong>Celebration</strong><span>4 hrs · 15 guests</span></div>
+              <span class="status-badge pending">Pending</span>
+            </div>
+            <div class="upcoming-item">
+              <div class="upcoming-date"><span>12</span>Jul</div>
+              <div class="upcoming-info"><strong>Royal Diamond</strong><span>8 hrs · 12 guests</span></div>
+              <span class="status-badge confirmed">Confirmed</span>
+            </div>
+          </div>
+        </div>
+      </div>
       </div>
 
       <div class="dashboard-table-wrap" id="bookings">
@@ -156,7 +208,108 @@
 
       <div id="favorites" style="margin-top: 30px;">
         <h3 style="font-family: var(--font-secondary); color: var(--dark); margin-bottom: 16px;"><i class="fas fa-heart"></i> Favorite Yachts</h3>
-        <p style="color: var(--text-light);">You haven't saved any yachts yet. <a href="../fleet.html" style="color: var(--primary);">Browse our fleet</a> to add some.</p>
+        <div class="fav-grid">
+          <div class="fav-card">
+            <div class="fav-img">
+              <img src="../images/fleet/Ocean_11zon.webp" alt="Ocean Supreme">
+              <button class="fav-remove" title="Remove"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="fav-body">
+              <h4>Ocean Supreme</h4>
+              <div class="fav-meta">
+                <span><i class="fas fa-user"></i> 12</span>
+                <span><i class="fas fa-ruler"></i> 85 ft</span>
+                <div class="fav-stars">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+              </div>
+              <div class="fav-footer">
+                <span class="fav-price">$1,200<small>/hr</small></span>
+                <a href="../fleet.html" class="btn btn-primary btn-sm">Book Now</a>
+              </div>
+            </div>
+          </div>
+          <div class="fav-card">
+            <div class="fav-img">
+              <img src="../images/fleet/Velocity_11zon.webp" alt="Velocity X">
+              <button class="fav-remove" title="Remove"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="fav-body">
+              <h4>Velocity X</h4>
+              <div class="fav-meta">
+                <span><i class="fas fa-user"></i> 6</span>
+                <span><i class="fas fa-ruler"></i> 42 ft</span>
+                <div class="fav-stars">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+              </div>
+              <div class="fav-footer">
+                <span class="fav-price">$450<small>/hr</small></span>
+                <a href="../fleet.html" class="btn btn-primary btn-sm">Book Now</a>
+              </div>
+            </div>
+          </div>
+          <div class="fav-card">
+            <div class="fav-img">
+              <img src="../images/fleet/Reel_11zon.webp" alt="Reel Master">
+              <button class="fav-remove" title="Remove"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="fav-body">
+              <h4>Reel Master</h4>
+              <div class="fav-meta">
+                <span><i class="fas fa-user"></i> 8</span>
+                <span><i class="fas fa-ruler"></i> 38 ft</span>
+                <div class="fav-stars">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                </div>
+              </div>
+              <div class="fav-footer">
+                <span class="fav-price">$600<small>/hr</small></span>
+                <a href="../fleet.html" class="btn btn-primary btn-sm">Book Now</a>
+              </div>
+            </div>
+          </div>
+          <div class="fav-card">
+            <div class="fav-img">
+              <img src="../images/fleet/Celebration_11zon.webp" alt="Celebration">
+              <button class="fav-remove" title="Remove"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="fav-body">
+              <h4>Celebration</h4>
+              <div class="fav-meta">
+                <span><i class="fas fa-user"></i> 30</span>
+                <span><i class="fas fa-ruler"></i> 100 ft</span>
+                <div class="fav-stars">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+              </div>
+              <div class="fav-footer">
+                <span class="fav-price">$1,800<small>/hr</small></span>
+                <a href="../fleet.html" class="btn btn-primary btn-sm">Book Now</a>
+              </div>
+            </div>
+          </div>
+          <div class="fav-card">
+            <div class="fav-img">
+              <img src="../images/fleet/Royal_11zon.webp" alt="Royal Diamond">
+              <button class="fav-remove" title="Remove"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="fav-body">
+              <h4>Royal Diamond</h4>
+              <div class="fav-meta">
+                <span><i class="fas fa-user"></i> 20</span>
+                <span><i class="fas fa-ruler"></i> 120 ft</span>
+                <div class="fav-stars">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+              </div>
+              <div class="fav-footer">
+                <span class="fav-price">$2,500<small>/hr</small></span>
+                <a href="../fleet.html" class="btn btn-primary btn-sm">Book Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
   </div>

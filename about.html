@@ -35,12 +35,22 @@
         <li><button class="nav-close" id="nav-close" aria-label="Close menu">&times;</button></li>
         <li><a href="index.html" class="nav-link">Home</a></li>
         <li><a href="about.html" class="nav-link active">About</a></li>
-        <li><a href="fleet.html" class="nav-link">Fleet</a></li>
-        <li><a href="destinations.html" class="nav-link">Destinations</a></li>
+        <li class="nav-dropdown">
+          <a href="#" class="nav-link dropdown-toggle">Pages <i class="fas fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="fleet.html" class="nav-link">Fleet</a></li>
+            <li><a href="destinations.html" class="nav-link">Destinations</a></li>
+            <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+            <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+            <li><a href="testimonials.html" class="nav-link">Testimonials</a></li>
+          </ul>
+        </li>
+        <li class="mobile-nav-item"><a href="fleet.html" class="nav-link">Fleet</a></li>
+        <li class="mobile-nav-item"><a href="destinations.html" class="nav-link">Destinations</a></li>
+        <li class="mobile-nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
+        <li class="mobile-nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
+        <li class="mobile-nav-item"><a href="testimonials.html" class="nav-link">Testimonials</a></li>
         <li><a href="services.html" class="nav-link">Services</a></li>
-        <li><a href="gallery.html" class="nav-link">Gallery</a></li>
-        <li><a href="pricing.html" class="nav-link">Pricing</a></li>
-        <li><a href="testimonials.html" class="nav-link">Testimonials</a></li>
         <li><a href="contact.html" class="nav-link">Contact</a></li>        <li class="nav-auth-mobile">
           <a href="login.html" class="nav-link btn-outline">Login</a>
           <a href="register.html" class="nav-link btn-primary">Register</a>
@@ -59,7 +69,11 @@
   <section class="page-banner" style="background-image: url('./images/gallery/bg3_11zon.webp');">
     <h1>About Stackly</h1>
     <p>Discover the story behind the world's most premium yacht rental experience</p>
-    
+    <div class="wave-container">
+      <svg class="wave" viewBox="0 0 1440 320" preserveAspectRatio="none">
+        <path fill="#ffffff" d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,213.3C672,224,768,224,864,213.3C960,203,1056,181,1152,181.3C1248,181,1344,203,1392,213.3L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+      </svg>
+    </div>
   </section>
 
   <section class="section about">
