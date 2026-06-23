@@ -20,7 +20,7 @@
       </a>
      
       <div class="nav-actions">
-        <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar"><i class="fas fa-bars"></i></button>
+        <button type="button" class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar"><i class="fas fa-bars"></i></button>
         <a href="../login.html" class="btn btn-outline btn-sm">Logout</a>
       </div>
     </nav>
@@ -140,7 +140,7 @@
               <td>6 Hours</td>
               <td>8</td>
               <td><span class="status-badge confirmed">Confirmed</span></td>
-              <td><a href="#" style="color: var(--primary); font-size: 0.85rem;">View Details</a></td>
+              <td><a href="javascript:void(0)" class="view-details" data-yacht="Ocean Supreme" data-date="Jun 28, 2026" data-duration="6 Hours" data-guests="8" data-status="Confirmed" style="color: var(--primary); font-size: 0.85rem;">View Details</a></td>
             </tr>
             <tr>
               <td><strong>Celebration</strong></td>
@@ -148,7 +148,7 @@
               <td>4 Hours</td>
               <td>15</td>
               <td><span class="status-badge pending">Pending</span></td>
-              <td><a href="#" style="color: var(--primary); font-size: 0.85rem;">View Details</a></td>
+              <td><a href="javascript:void(0)" class="view-details" data-yacht="Celebration" data-date="Jul 5, 2026" data-duration="4 Hours" data-guests="15" data-status="Pending" style="color: var(--primary); font-size: 0.85rem;">View Details</a></td>
             </tr>
           </tbody>
         </table>
@@ -212,7 +212,7 @@
           <div class="fav-card">
             <div class="fav-img">
               <img src="../images/fleet/Ocean_11zon.webp" alt="Ocean Supreme">
-              <button class="fav-remove" title="Remove"><i class="fas fa-times"></i></button>
+              <button type="button" class="fav-remove" title="Remove"><i class="fas fa-times"></i></button>
             </div>
             <div class="fav-body">
               <h4>Ocean Supreme</h4>
@@ -232,7 +232,7 @@
           <div class="fav-card">
             <div class="fav-img">
               <img src="../images/fleet/Velocity_11zon.webp" alt="Velocity X">
-              <button class="fav-remove" title="Remove"><i class="fas fa-times"></i></button>
+              <button type="button" class="fav-remove" title="Remove"><i class="fas fa-times"></i></button>
             </div>
             <div class="fav-body">
               <h4>Velocity X</h4>
@@ -252,7 +252,7 @@
           <div class="fav-card">
             <div class="fav-img">
               <img src="../images/fleet/Reel_11zon.webp" alt="Reel Master">
-              <button class="fav-remove" title="Remove"><i class="fas fa-times"></i></button>
+              <button type="button" class="fav-remove" title="Remove"><i class="fas fa-times"></i></button>
             </div>
             <div class="fav-body">
               <h4>Reel Master</h4>
@@ -272,7 +272,7 @@
           <div class="fav-card">
             <div class="fav-img">
               <img src="../images/fleet/Celebration_11zon.webp" alt="Celebration">
-              <button class="fav-remove" title="Remove"><i class="fas fa-times"></i></button>
+              <button type="button" class="fav-remove" title="Remove"><i class="fas fa-times"></i></button>
             </div>
             <div class="fav-body">
               <h4>Celebration</h4>
@@ -292,7 +292,7 @@
           <div class="fav-card">
             <div class="fav-img">
               <img src="../images/fleet/Royal_11zon.webp" alt="Royal Diamond">
-              <button class="fav-remove" title="Remove"><i class="fas fa-times"></i></button>
+              <button type="button" class="fav-remove" title="Remove"><i class="fas fa-times"></i></button>
             </div>
             <div class="fav-body">
               <h4>Royal Diamond</h4>
@@ -312,6 +312,19 @@
         </div>
       </div>
     </main>
+  </div>
+
+  <div class="modal-overlay" id="bookingModal">
+    <div class="modal-box">
+      <button type="button" class="modal-close" id="modalClose">&times;</button>
+      <h3 id="modalYacht"></h3>
+      <div class="modal-body">
+        <p><strong>Date:</strong> <span id="modalDate"></span></p>
+        <p><strong>Duration:</strong> <span id="modalDuration"></span></p>
+        <p><strong>Guests:</strong> <span id="modalGuests"></span></p>
+        <p><strong>Status:</strong> <span id="modalStatus"></span></p>
+      </div>
+    </div>
   </div>
 
   <script src="../js/script.js"></script>
@@ -365,6 +378,24 @@
         btn.style.background = 'linear-gradient(135deg, #2ECC71, #27AE60)';
         setTimeout(() => { btn.textContent = 'Save Changes'; btn.style.background = ''; }, 2000);
       });
+    });
+    // View Details modal
+    document.querySelectorAll('.view-details').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.getElementById('modalYacht').textContent = this.dataset.yacht;
+        document.getElementById('modalDate').textContent = this.dataset.date;
+        document.getElementById('modalDuration').textContent = this.dataset.duration;
+        document.getElementById('modalGuests').textContent = this.dataset.guests;
+        document.getElementById('modalStatus').textContent = this.dataset.status;
+        document.getElementById('bookingModal').classList.add('open');
+      });
+    });
+    document.getElementById('modalClose').addEventListener('click', () => {
+      document.getElementById('bookingModal').classList.remove('open');
+    });
+    document.getElementById('bookingModal').addEventListener('click', function(e) {
+      if (e.target === this) this.classList.remove('open');
     });
   });
   </script>

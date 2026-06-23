@@ -180,29 +180,31 @@ document.addEventListener('DOMContentLoaded', () => {
   // ==========================================
   function animateCounters() {
     const counters = document.querySelectorAll('.stat-number');
-    counters.forEach(counter => {
-      const target = parseInt(counter.getAttribute('data-target'));
-      const suffix = target === 24 ? '+' : '+';
-      let current = 0;
-      const increment = Math.ceil(target / 60);
-      const duration = 2000;
-      const stepTime = Math.floor(duration / target);
+    if (counters.length > 0) {
+      counters.forEach(counter => {
+        const target = parseInt(counter.getAttribute('data-target'));
+        const suffix = target === 24 ? '+' : '+';
+        let current = 0;
+        const increment = Math.ceil(target / 60);
+        const duration = 2000;
+        const stepTime = Math.floor(duration / target);
 
-      function updateCounter() {
-        current += increment;
-        if (current >= target) {
-          current = target;
+        function updateCounter() {
+          current += increment;
+          if (current >= target) {
+            current = target;
+            counter.textContent = current + suffix;
+            return;
+          }
           counter.textContent = current + suffix;
-          return;
+          requestAnimationFrame(() => {
+            setTimeout(updateCounter, stepTime);
+          });
         }
-        counter.textContent = current + suffix;
-        requestAnimationFrame(() => {
-          setTimeout(updateCounter, stepTime);
-        });
-      }
 
-      updateCounter();
-    });
+        updateCounter();
+      });
+    }
   }
 
   // ==========================================
@@ -239,30 +241,32 @@ document.addEventListener('DOMContentLoaded', () => {
   const filterBtns = document.querySelectorAll('.filter-btn');
   const fleetCards = document.querySelectorAll('.fleet-card');
 
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
+  if (filterBtns.length > 0 && fleetCards.length > 0) {
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
 
-      const filter = btn.getAttribute('data-filter');
+        const filter = btn.getAttribute('data-filter');
 
-      fleetCards.forEach(card => {
-        if (filter === 'all' || card.getAttribute('data-category') === filter) {
-          card.style.display = 'block';
-          setTimeout(() => {
-            card.style.opacity = '1';
-            card.style.transform = 'translateY(0)';
-          }, 50);
-        } else {
-          card.style.opacity = '0';
-          card.style.transform = 'translateY(20px)';
-          setTimeout(() => {
-            card.style.display = 'none';
-          }, 300);
-        }
+        fleetCards.forEach(card => {
+          if (filter === 'all' || card.getAttribute('data-category') === filter) {
+            card.style.display = 'block';
+            setTimeout(() => {
+              card.style.opacity = '1';
+              card.style.transform = 'translateY(0)';
+            }, 50);
+          } else {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            setTimeout(() => {
+              card.style.display = 'none';
+            }, 300);
+          }
+        });
       });
     });
-  });
+  }
 
   // ==========================================
   // Gallery Lightbox
@@ -272,16 +276,18 @@ document.addEventListener('DOMContentLoaded', () => {
   const lightboxImg = document.getElementById('lightbox-img');
   const lightboxClose = document.querySelector('.lightbox-close');
 
-  galleryItems.forEach(item => {
-    item.addEventListener('click', () => {
-      const img = item.querySelector('img');
-      if (img && lightbox && lightboxImg) {
-        lightboxImg.src = img.src;
-        lightbox.classList.add('open');
-        document.body.style.overflow = 'hidden';
-      }
+  if (galleryItems.length > 0) {
+    galleryItems.forEach(item => {
+      item.addEventListener('click', () => {
+        const img = item.querySelector('img');
+        if (img && lightbox && lightboxImg) {
+          lightboxImg.src = img.src;
+          lightbox.classList.add('open');
+          document.body.style.overflow = 'hidden';
+        }
+      });
     });
-  });
+  }
 
   function closeLightbox() {
     if (lightbox) {
@@ -318,57 +324,59 @@ document.addEventListener('DOMContentLoaded', () => {
   const nextBtn = document.querySelector('.next-btn');
   let currentTestimonial = 0;
 
-  function showTestimonial(index) {
-    testimonialSlides.forEach(slide => slide.classList.remove('active'));
-    dots.forEach(dot => dot.classList.remove('active'));
+  if (testimonialSlider && testimonialSlides.length > 0 && dots.length > 0) {
+    function showTestimonial(index) {
+      testimonialSlides.forEach(slide => slide.classList.remove('active'));
+      dots.forEach(dot => dot.classList.remove('active'));
 
-    testimonialSlides[index].classList.add('active');
-    dots[index].classList.add('active');
-  }
+      testimonialSlides[index].classList.add('active');
+      dots[index].classList.add('active');
+    }
 
-  function nextTestimonial() {
-    currentTestimonial = (currentTestimonial + 1) % testimonialSlides.length;
-    showTestimonial(currentTestimonial);
-  }
-
-  function prevTestimonial() {
-    currentTestimonial = (currentTestimonial - 1 + testimonialSlides.length) % testimonialSlides.length;
-    showTestimonial(currentTestimonial);
-  }
-
-  if (nextBtn) {
-    nextBtn.addEventListener('click', nextTestimonial);
-  }
-
-  if (prevBtn) {
-    prevBtn.addEventListener('click', prevTestimonial);
-  }
-
-  dots.forEach((dot, index) => {
-    dot.addEventListener('click', () => {
-      currentTestimonial = index;
+    function nextTestimonial() {
+      currentTestimonial = (currentTestimonial + 1) % testimonialSlides.length;
       showTestimonial(currentTestimonial);
+    }
+
+    function prevTestimonial() {
+      currentTestimonial = (currentTestimonial - 1 + testimonialSlides.length) % testimonialSlides.length;
+      showTestimonial(currentTestimonial);
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', nextTestimonial);
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', prevTestimonial);
+    }
+
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        currentTestimonial = index;
+        showTestimonial(currentTestimonial);
+      });
     });
-  });
 
-  // Auto slide
-  let testimonialInterval;
+    // Auto slide
+    let testimonialInterval;
 
-  function startTestimonialAuto() {
-    testimonialInterval = setInterval(nextTestimonial, 5000);
-  }
+    function startTestimonialAuto() {
+      testimonialInterval = setInterval(nextTestimonial, 5000);
+    }
 
-  function stopTestimonialAuto() {
-    clearInterval(testimonialInterval);
-  }
+    function stopTestimonialAuto() {
+      clearInterval(testimonialInterval);
+    }
 
-  if (testimonialSlides.length > 1) {
-    startTestimonialAuto();
+    if (testimonialSlides.length > 1) {
+      startTestimonialAuto();
 
-    const testimonialContainer = document.querySelector('.testimonial-container');
-    if (testimonialContainer) {
-      testimonialContainer.addEventListener('mouseenter', stopTestimonialAuto);
-      testimonialContainer.addEventListener('mouseleave', startTestimonialAuto);
+      const testimonialContainer = document.querySelector('.testimonial-container');
+      if (testimonialContainer) {
+        testimonialContainer.addEventListener('mouseenter', stopTestimonialAuto);
+        testimonialContainer.addEventListener('mouseleave', startTestimonialAuto);
+      }
     }
   }
 
@@ -392,117 +400,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ==========================================
-  // Contact Form Validation
-  // ==========================================
-  const contactForm = document.getElementById('contact-form');
 
-  if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-
-      const name = document.getElementById('name');
-      const email = document.getElementById('email');
-      const phone = document.getElementById('phone');
-      const message = document.getElementById('message');
-
-      let isValid = true;
-
-      // Check if all fields are empty
-      if (!name.value.trim() && !email.value.trim() && !phone.value.trim() && !message.value.trim()) {
-        alert('Please fill all fields');
-        return;
-      }
-
-      // Name validation
-      const nameVal = name.value.trim();
-      const nameRegex = /^[A-Za-z\s]+$/;
-      if (!nameVal || nameVal.length < 2 || nameVal.length > 16 || !nameRegex.test(nameVal)) {
-        showError(name, 'Name must be 2-16 letters only');
-        isValid = false;
-      } else {
-        clearError(name);
-      }
-
-      // Email validation
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!email.value.trim()) {
-        showError(email, 'Please enter a valid email address');
-        isValid = false;
-      } else if (!emailRegex.test(email.value.trim())) {
-        showError(email, 'Please enter a valid email address');
-        alert('Please enter valid email ID');
-        isValid = false;
-      } else {
-        clearError(email);
-      }
-
-      // Phone validation
-      const phoneRegex = /^[\d\s\-\+\(\)]{7,20}$/;
-      if (!phone.value.trim() || !phoneRegex.test(phone.value.trim())) {
-        showError(phone, 'Please enter a valid phone number');
-        isValid = false;
-      } else {
-        clearError(phone);
-      }
-
-      // Message validation
-      if (!message.value.trim() || message.value.trim().length < 10) {
-        showError(message, 'Please enter a message (at least 10 characters)');
-        isValid = false;
-      } else {
-        clearError(message);
-      }
-
-      if (isValid) {
-        submitForm(contactForm);
-      }
-    });
-  }
-
-  function showError(input, message) {
-    const formGroup = input.closest('.form-group');
-    let errorEl = formGroup.querySelector('.error-message');
-
-    if (!errorEl) {
-      errorEl = document.createElement('span');
-      errorEl.className = 'error-message';
-      errorEl.style.cssText = 'color: #E74C3C; font-size: 0.8rem; margin-top: 4px; display: block;';
-      formGroup.appendChild(errorEl);
-    }
-
-    errorEl.textContent = message;
-    input.style.borderColor = '#E74C3C';
-  }
-
-  function clearError(input) {
-    const formGroup = input.closest('.form-group');
-    const errorEl = formGroup.querySelector('.error-message');
-    if (errorEl) {
-      errorEl.remove();
-    }
-    input.style.borderColor = '';
-  }
-
-  function submitForm(form) {
-    const btn = form.querySelector('.btn');
-    const originalText = btn.textContent;
-    btn.textContent = 'Sending...';
-    btn.disabled = true;
-
-    setTimeout(() => {
-      btn.textContent = 'Message Sent!';
-      btn.style.background = 'linear-gradient(135deg, #2ECC71, #27AE60)';
-
-      form.reset();
-
-      setTimeout(() => {
-        btn.textContent = originalText;
-        btn.style.background = '';
-        btn.disabled = false;
-      }, 3000);
-    }, 1500);
-  }
 
   // ==========================================
   // Newsletter Form
@@ -582,6 +480,12 @@ document.addEventListener('DOMContentLoaded', () => {
   // ==========================================
   // Smooth Scroll for Anchor Links
   // ==========================================
+  function toggleFaq(el) {
+    el.classList.toggle('active');
+    const answer = el.nextElementSibling;
+    if (answer) answer.classList.toggle('open');
+  }
+
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       const href = this.getAttribute('href');
@@ -593,6 +497,13 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         target.scrollIntoView({ behavior: 'smooth' });
       }
+    });
+  });
+
+  // Add this for FAQ functionality on index.html
+  document.querySelectorAll('.faq-question').forEach(item => {
+    item.addEventListener('click', function() {
+      toggleFaq(this);
     });
   });
 

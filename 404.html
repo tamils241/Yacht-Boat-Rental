@@ -8,8 +8,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="icon" type="image/webp" href="images/gallery/logo.webp">
-  <link rel="stylesheet" href="css/404.css" />
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/404.css" />
   <link rel="stylesheet" href="css/responsive.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" />
@@ -35,7 +35,7 @@
         <a href="javascript:history.back()" class="back-btn">Go Back</a>
         <a href="index.html" class="home-btn">Go to Home</a>
       </div>
-    
+      <a href="fleet.html" class="btn btn-primary">Search</a>
     </section>
   </main>
 
@@ -59,6 +59,11 @@
             <img src="images/gallery/logo.webp" alt="Stackly">
           </a>
           <p>Setting the standard for luxury yacht and boat rental experiences worldwide.</p>
+          <div class="footer-contact-info">
+            <p><i class="fas fa-envelope"></i> info@stackly.com</p>
+            <p><i class="fas fa-phone"></i> +971 50 123 4567</p>
+            <p><i class="fas fa-map-marker-alt"></i> Dubai Marina, UAE</p>
+          </div>
           <div class="footer-social">
             <a href="404.html" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
             <a href="404.html" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -99,15 +104,19 @@
         <div class="footer-newsletter reveal">
           <h3>Newsletter</h3>
           <p>Subscribe for exclusive offers and updates.</p>
-          <form id="newsletter-form">
+          <form id="newsletter-form" action="https://formspree.io/f/your_newsletter_form_id" method="POST">
             <div class="newsletter-group">
-              <input type="email" placeholder="Your Email" required>
+              <input type="email" name="email" placeholder="Your Email" required>
               <button type="submit" aria-label="Subscribe"><i class="fas fa-paper-plane"></i></button>
             </div>
           </form>
         </div>
       </div>
       <div class="footer-bottom">
+        <div class="footer-legal">
+          <a href="404.html">Privacy Policy</a>
+          <a href="404.html">Terms &amp; Conditions</a>
+        </div>
         <p>&copy; 2026 Stackly. All rights reserved. | Luxury Yacht & Boat Rental</p>
       </div>
     </div>

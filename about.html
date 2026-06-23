@@ -21,7 +21,7 @@
     </div>
   </div>
 
-  <button id="scroll-top-btn" aria-label="Scroll to top">
+  <button type="button" id="scroll-top-btn" aria-label="Scroll to top">
     <i class="fas fa-chevron-up"></i>
   </button>
 
@@ -32,7 +32,7 @@
         <img src="images/gallery/logo.webp" alt="Stackly">
       </a>
       <ul class="nav-menu" id="nav-menu">
-        <li><button class="nav-close" id="nav-close" aria-label="Close menu">&times;</button></li>
+        <li><button type="button" class="nav-close" id="nav-close" aria-label="Close menu">&times;</button></li>
         <li><a href="index.html" class="nav-link">Home</a></li>
         <li><a href="about.html" class="nav-link active">About</a></li>
         <li class="nav-dropdown">
@@ -45,21 +45,21 @@
             <li><a href="testimonials.html" class="nav-link">Testimonials</a></li>
           </ul>
         </li>
-        <li class="mobile-nav-item"><a href="fleet.html" class="nav-link">Fleet</a></li>
-        <li class="mobile-nav-item"><a href="destinations.html" class="nav-link">Destinations</a></li>
-        <li class="mobile-nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
-        <li class="mobile-nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
-        <li class="mobile-nav-item"><a href="testimonials.html" class="nav-link">Testimonials</a></li>
+        <li class="mobile-nav-item mobile-page-link"><a href="fleet.html" class="nav-link">Fleet</a></li>
+        <li class="mobile-nav-item mobile-page-link"><a href="destinations.html" class="nav-link">Destinations</a></li>
+        <li class="mobile-nav-item mobile-page-link"><a href="gallery.html" class="nav-link">Gallery</a></li>
+        <li class="mobile-nav-item mobile-page-link"><a href="pricing.html" class="nav-link">Pricing</a></li>
+        <li class="mobile-nav-item mobile-page-link"><a href="testimonials.html" class="nav-link">Testimonials</a></li>
         <li><a href="services.html" class="nav-link">Services</a></li>
-        <li><a href="contact.html" class="nav-link">Contact</a></li>        <li class="nav-auth-mobile">
-          <a href="login.html" class="nav-link btn-outline">Login</a>
-          <a href="register.html" class="nav-link btn-primary">Register</a>
-        </li></ul>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li class="mobile-nav-item"><a href="login.html" class="nav-link btn-outline">Login</a></li>
+        <li class="mobile-nav-item"><a href="register.html" class="nav-link btn-primary">Register</a></li>
+      </ul>
       <div class="nav-actions">
         <a href="login.html" class="btn btn-outline btn-sm">Login</a>
         <a href="register.html" class="btn btn-primary btn-sm">Register</a>
         <a href="contact.html" class="btn btn-primary btn-sm book-now">Book Now</a>
-        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <button type="button" class="hamburger" id="hamburger" aria-label="Toggle menu">
           <span></span><span></span><span></span>
         </button>
       </div>
@@ -245,6 +245,11 @@
             <img src="images/gallery/logo.webp" alt="Stackly">
           </a>
           <p>Setting the standard for luxury yacht and boat rental experiences worldwide.</p>
+          <div class="footer-contact-info">
+            <p><i class="fas fa-envelope"></i> info@stackly.com</p>
+            <p><i class="fas fa-phone"></i> +971 50 123 4567</p>
+            <p><i class="fas fa-map-marker-alt"></i> Dubai Marina, UAE</p>
+          </div>
           <div class="footer-social">
             <a href="404.html" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
             <a href="404.html" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -268,8 +273,8 @@
           <ul>
             <li><a href="login.html">Login</a></li>
             <li><a href="register.html">Register</a></li>
-            <li><a href="login.html">User Dashboard</a></li>
-            <li><a href="login.html">Admin Dashboard</a></li>
+            <li><a href="dashboard/user-dashboard.html">User Dashboard</a></li>
+            <li><a href="dashboard/admin-dashboard.html">Admin Dashboard</a></li>
           </ul>
         </div>
         <div class="footer-links reveal">
@@ -285,15 +290,19 @@
         <div class="footer-newsletter reveal">
           <h3>Newsletter</h3>
           <p>Subscribe for exclusive offers and updates.</p>
-          <form id="newsletter-form">
+          <form id="newsletter-form" action="https://formspree.io/f/your_newsletter_form_id" method="POST">
             <div class="newsletter-group">
-              <input type="email" placeholder="Your Email" required>
+              <input type="email" name="email" placeholder="Your Email" required>
               <button type="submit" aria-label="Subscribe"><i class="fas fa-paper-plane"></i></button>
             </div>
           </form>
         </div>
       </div>
       <div class="footer-bottom">
+        <div class="footer-legal">
+          <a href="404.html">Privacy Policy</a>
+          <a href="404.html">Terms &amp; Conditions</a>
+        </div>
         <p>&copy; 2026 Stackly. All rights reserved. | Luxury Yacht & Boat Rental</p>
       </div>
     </div>

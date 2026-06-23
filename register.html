@@ -39,7 +39,7 @@
             <i class="fas fa-envelope"></i>
           </div>
           <div class="form-group">
-            <input type="tel" id="reg-phone" placeholder="Phone Number" pattern="[0-9]{1,16}" title="Numbers only (max 16 digits)" maxlength="16" oninput="this.value = this.value.replace(/[^0-9]/g, '')" required>
+            <input type="tel" id="reg-phone" placeholder="Phone Number (10 digits)" pattern="[0-9]{10}" title="Enter exactly 10 digits" maxlength="10" oninput="this.value = this.value.replace(/[^0-9]/g, '')" required>
             <i class="fas fa-phone"></i>
           </div>
           <div class="form-group">
@@ -51,7 +51,7 @@
           <div class="form-group">
             <input type="password" id="reg-confirm" placeholder="Confirm Password" pattern="[A-Za-z0-9]{1,16}" title="Letters & numbers only (max 16 characters)" maxlength="16" oninput="this.value = this.value.replace(/[^A-Za-z0-9]/g, '')" required>
             <i class="fas fa-lock"></i>
-            
+            <span class="field-error" id="reg-confirm-error"></span>
           </div>
           <div class="form-group">
             <select id="reg-role" required>
@@ -95,7 +95,6 @@
       </div>
     </div>
   </div>
-
 
   <script src="js/script.js"></script>
   <script>
@@ -145,7 +144,7 @@
         const confirm = document.getElementById('reg-confirm').value;
 
         if (password !== confirm) {
-          alert('Passwords do not match!');
+          document.getElementById('reg-confirm-error').textContent = 'Passwords do not match';
           return;
         }
 
