@@ -58,6 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.body.appendChild(navOverlay);
 
   function toggleMenu() {
+    if (!hamburger || !navMenu) return;
     hamburger.classList.toggle('active');
     navMenu.classList.toggle('open');
     navOverlay.classList.toggle('active');
@@ -66,6 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function closeMenu() {
     if (!hamburger || !navMenu) return;
+    document.querySelectorAll('.nav-dropdown.open').forEach(d => d.classList.remove('open'));
     hamburger.classList.remove('active');
     navMenu.classList.remove('open');
     navOverlay.classList.remove('active');
@@ -101,17 +103,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Close dropdowns when closing menu
-  function closeAllDropdowns() {
-    document.querySelectorAll('.nav-dropdown.open').forEach(d => d.classList.remove('open'));
-  }
-
-  const origCloseMenu = closeMenu;
-  closeMenu = function() {
-    closeAllDropdowns();
-    origCloseMenu();
-  };
-
   // Close menu on overlay click
   navOverlay.addEventListener('click', closeMenu);
 
@@ -129,6 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // ==========================================
   function updateActiveLink() {
     const sections = document.querySelectorAll('section[id]');
+    if (sections.length === 0) return;
     const scrollPos = window.scrollY + 150;
 
     sections.forEach(section => {
@@ -137,8 +129,10 @@ document.addEventListener('DOMContentLoaded', () => {
       const id = section.getAttribute('id');
 
       navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (!href || !href.startsWith('#')) return;
         link.classList.remove('active');
-        if (link.getAttribute('href') === `#${id}` &&
+        if (href === `#${id}` &&
             scrollPos >= top && scrollPos < bottom) {
           link.classList.add('active');
         }
@@ -267,52 +261,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
-
-  // ==========================================
-  // Gallery Lightbox
-  // ==========================================
-  const galleryItems = document.querySelectorAll('.gallery-item');
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImg = document.getElementById('lightbox-img');
-  const lightboxClose = document.querySelector('.lightbox-close');
-
-  if (galleryItems.length > 0) {
-    galleryItems.forEach(item => {
-      item.addEventListener('click', () => {
-        const img = item.querySelector('img');
-        if (img && lightbox && lightboxImg) {
-          lightboxImg.src = img.src;
-          lightbox.classList.add('open');
-          document.body.style.overflow = 'hidden';
-        }
-      });
-    });
-  }
-
-  function closeLightbox() {
-    if (lightbox) {
-      lightbox.classList.remove('open');
-      document.body.style.overflow = '';
-    }
-  }
-
-  if (lightboxClose) {
-    lightboxClose.addEventListener('click', closeLightbox);
-  }
-
-  if (lightbox) {
-    lightbox.addEventListener('click', (e) => {
-      if (e.target === lightbox) {
-        closeLightbox();
-      }
-    });
-  }
-
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-      closeLightbox();
-    }
-  });
 
   // ==========================================
   // Testimonial Carousel
