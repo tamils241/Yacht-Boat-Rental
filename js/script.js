@@ -52,9 +52,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const navMenu = document.getElementById('nav-menu');
   const navLinks = document.querySelectorAll('.nav-link');
 
+  // Create overlay element
+  const navOverlay = document.createElement('div');
+  navOverlay.className = 'nav-overlay';
+  document.body.appendChild(navOverlay);
+
   function toggleMenu() {
     hamburger.classList.toggle('active');
     navMenu.classList.toggle('open');
+    navOverlay.classList.toggle('active');
     document.body.style.overflow = navMenu.classList.contains('open') ? 'hidden' : '';
   }
 
@@ -62,6 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!hamburger || !navMenu) return;
     hamburger.classList.remove('active');
     navMenu.classList.remove('open');
+    navOverlay.classList.remove('active');
     document.body.style.overflow = '';
   }
 
@@ -79,14 +86,8 @@ document.addEventListener('DOMContentLoaded', () => {
     link.addEventListener('click', closeMenu);
   });
 
-  // Close menu on outside click
-  document.addEventListener('click', (e) => {
-    if (navMenu && navMenu.classList.contains('open') &&
-        !navMenu.contains(e.target) &&
-        hamburger && !hamburger.contains(e.target)) {
-      closeMenu();
-    }
-  });
+  // Close menu on overlay click
+  navOverlay.addEventListener('click', closeMenu);
 
   // ==========================================
   // Active Menu Highlight
