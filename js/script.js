@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const header = document.getElementById('header');
   const heroSection = document.querySelector('.hero');
 
+  let ticking = false;
   function updateNavbar() {
     if (!header) return;
     if (window.scrollY > 80) {
@@ -42,7 +43,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  window.addEventListener('scroll', updateNavbar);
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        updateNavbar();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
   updateNavbar();
 
   // ==========================================
@@ -74,14 +83,8 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.style.overflow = '';
   }
 
-  const navClose = document.getElementById('nav-close');
-
   if (hamburger) {
     hamburger.addEventListener('click', toggleMenu);
-  }
-
-  if (navClose) {
-    navClose.addEventListener('click', closeMenu);
   }
 
   // Nav dropdown toggle
@@ -140,7 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  window.addEventListener('scroll', updateActiveLink);
+  window.addEventListener('scroll', updateActiveLink, { passive: true });
 
   // ==========================================
   // Hero Slider
@@ -340,7 +343,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       scrollTopBtn.classList.remove('show');
     }
-  });
+  }, { passive: true });
 
   if (scrollTopBtn) {
     scrollTopBtn.addEventListener('click', () => {
@@ -470,7 +473,7 @@ document.addEventListener('DOMContentLoaded', () => {
           slide.style.transform = `translateY(${scrollPos * 0.3}px) scale(1.05)`;
         });
       }
-    });
+    }, { passive: true });
   }
 
   parallaxHero();

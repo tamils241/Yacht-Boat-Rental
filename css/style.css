@@ -38,14 +38,17 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
+  overflow-y: scroll;
 }
 
 body {
   font-family: var(--font-primary);
   color: var(--text);
+  padding-top: 80px;
   background: var(--white);
   overflow-x: hidden;
   line-height: 1.7;
+  -webkit-overflow-scrolling: touch;
 }
 
 a {
@@ -304,37 +307,29 @@ img {
    Header / Navbar
    ============================================ */
 #header {
-  position: fixed;
-  top: 0;
-  left: 0;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
   width: 100%;
-  z-index: 1000;
-  transition: var(--transition);
-  padding: 10px 0;
+  height: 80px;
+  background: var(--dark);
+  z-index: 99999;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 #header.scrolled {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
-  padding: 5px 0;
-}
-
-#header.scrolled .logo span,
-#header.scrolled .nav-link {
-  color: var(--dark);
+  background: var(--dark);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-  min-height: 60px;
+  height: 100%;
 }
+
 
 .logo {
   display: flex;
@@ -348,9 +343,7 @@ img {
   line-height: 1;
 }
 
-#header.scrolled .logo {
-  color: var(--dark);
-}
+
 
 .logo i {
   font-size: 1.6rem;
@@ -367,15 +360,7 @@ img {
 .nav-menu {
   display: flex;
   align-items: center;
-  gap: 2px;
-  margin: 0;
-  margin-left: auto;
-  padding: 0;
-  list-style: none;
-}
-
-.nav-menu li:first-child a {
-  margin-right: 8px;
+  gap: 4px;
 }
 
 .mobile-nav-item {
@@ -391,10 +376,6 @@ img {
   transition: var(--transition);
   position: relative;
   white-space: nowrap;
-}
-
-#header.scrolled .nav-link {
-  color: var(--text);
 }
 
 .nav-link::after {
@@ -476,10 +457,6 @@ img {
   color: var(--primary);
 }
 
-#header.scrolled .dropdown-menu .nav-link {
-  color: var(--text);
-}
-
 .nav-actions {
   display: flex;
   align-items: center;
@@ -501,17 +478,6 @@ img {
   transform: translateY(-2px);
 }
 
-#header.scrolled .nav-actions .btn-outline {
-  border-color: var(--primary);
-  color: var(--white);
-  background: var(--primary);
-}
-
-#header.scrolled .nav-actions .btn-outline:hover {
-  background: var(--dark-blue);
-  color: var(--white);
-}
-
 .nav-actions .btn-primary.btn-sm {
   display: inline-flex;
 }
@@ -521,30 +487,6 @@ img {
   display: none;
 }
 
-/* Nav Close Button (mobile) */
-.nav-close {
-  display: none;
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  width: 36px;
-  height: 36px;
-  align-items: center;
-  justify-content: center;
-  background: var(--light-gray);
-  border: none;
-  border-radius: 50%;
-  font-size: 1.4rem;
-  cursor: pointer;
-  color: var(--dark);
-  transition: var(--transition);
-  z-index: 10;
-}
-
-.nav-close:hover {
-  background: var(--primary);
-  color: var(--white);
-}
 
 /* Hamburger */
 .hamburger {
@@ -564,10 +506,6 @@ img {
   background: var(--white);
   border-radius: 5px;
   transition: var(--transition);
-}
-
-#header.scrolled .hamburger span {
-  background: var(--dark);
 }
 
 .hamburger.active span:nth-child(1) {
@@ -645,7 +583,7 @@ img {
   position: relative;
   z-index: 2;
   text-align: center;
-  padding: 120px 20px 80px;
+  padding: 50px 20px 80px;
   width: 100%;
 }
 
@@ -2165,7 +2103,7 @@ img {
    ============================================ */
 .page-banner {
   position: relative;
-  padding: 160px 0 80px;
+  padding: 90px 0 80px;
   text-align: center;
   overflow: hidden;
   background-size: cover;

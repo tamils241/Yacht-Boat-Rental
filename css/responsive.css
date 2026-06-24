@@ -146,21 +146,27 @@
     font-size: 0.95rem;
   }
 
-  /* Navbar */
-  #header {
-    background: rgba(255, 255, 255, 0.06);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-  }
-
-  #header.scrolled {
-    background: rgba(255, 255, 255, 0.97);
-  }
-
-  .navbar {
+  .hamburger {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 80px;
+    right: -100%;
+    width: 280px;
+    height: calc(100vh - 80px);
+    background: var(--white);
+    flex-direction: column;
+    padding: 60px 0 20px;
+    transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: -5px 0 30px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+    overflow-y: auto;
+  }
+
+  .nav-menu.open {
+    right: 0;
   }
 
   .logo {
@@ -189,13 +195,17 @@
   }
 
   #header.scrolled .mobile-back {
-    color: var(--dark);
-    background: var(--light-gray);
+    color: var(--white);
+    background: rgba(255,255,255,0.15);
   }
 
   .mobile-back:hover {
     background: var(--primary) !important;
     color: var(--white) !important;
+  }
+
+  #header.scrolled .mobile-back:hover {
+    background: var(--primary) !important;
   }
 
 
@@ -214,27 +224,6 @@
   .nav-overlay.active {
     opacity: 1;
     visibility: visible;
-  }
-
-  .nav-menu {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 300px;
-    height: 100vh;
-    background: var(--white);
-    flex-direction: column;
-    padding: 60px 0 24px;
-    box-shadow: -10px 0 40px rgba(0, 0, 0, 0.15);
-    transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-    z-index: 999;
-    gap: 2px;
-    overflow-y: auto;
-    align-items: flex-start;
-  }
-
-  .nav-menu.open {
-    right: 0;
   }
 
   .nav-menu .nav-link {
@@ -256,30 +245,6 @@
   .nav-menu .nav-link.active {
     background: rgba(0, 119, 182, 0.08);
     color: var(--primary);
-  }
-
-  .nav-menu li:first-child a {
-    margin-right: 0;
-  }
-
-  .nav-menu li:first-child {
-    position: static;
-  }
-
-  .nav-close {
-    display: flex;
-    position: absolute;
-    top: 12px;
-    right: 12px;
-    width: 32px;
-    height: 32px;
-    font-size: 1.3rem;
-  }
-
-  .hamburger {
-    display: flex;
-    align-self: center;
-    margin-left: 4px;
   }
 
   .nav-actions .btn-outline,
@@ -363,6 +328,10 @@
   }
 
   /* Hero */
+  .hero {
+    align-items: flex-start;
+  }
+
   .hero-title {
     font-size: 2rem;
   }
@@ -379,6 +348,10 @@
   .hero-buttons .btn {
     width: 100%;
     max-width: 280px;
+  }
+
+  .hero-search {
+    margin-top: 30px;
   }
 
   .search-form {
@@ -689,7 +662,7 @@
 
   /* Page Banner */
   .page-banner {
-    padding: 120px 0 60px;
+    padding: 50px 0 60px;
     background-attachment: scroll;
   }
 
@@ -743,7 +716,11 @@
   }
 
   .hero-content {
-    padding: 100px 16px 60px;
+    padding: 20px 16px 60px;
+  }
+
+  .hero-search {
+    margin-top: 20px;
   }
 
   .about-stats {
@@ -1075,7 +1052,6 @@
   }
 
   .nav-menu {
-    padding-top: 60px;
     overflow-y: auto;
   }
 
@@ -1122,7 +1098,7 @@
   }
 
   .page-banner {
-    padding: 100px 0 50px;
+    padding: 30px 0 50px;
   }
 
   .page-banner h1 {
